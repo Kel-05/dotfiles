@@ -1,0 +1,166 @@
+{
+  "main": {
+    "id": "3aed7219a9ff5850",
+    "type": "split",
+    "children": [
+      {
+        "id": "dff7f07a1b8345a1",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "0b5bf0615b1d59b5",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Italiano/Romanticismo/L'eroe romantico.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "5ce8da84b30f96b4",
+    "type": "split",
+    "children": [
+      {
+        "id": "852b0b8fa151dacc",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3281a3dddcb9edb0",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "2e9a77dc4918da5b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "8b989a008598ea4d",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1fbe81bd934bcd18",
+    "type": "split",
+    "children": [
+      {
+        "id": "80e0094d0765cae8",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a3f636daccc84f1a",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Italiano/Romanticismo/L'eroe romantico.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "1a096c147529c163",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Italiano/Romanticismo/L'eroe romantico.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b876aad64b86b33c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "29a563103a74e2ef",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Italiano/Romanticismo/L'eroe romantico.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "0b5bf0615b1d59b5",
+  "lastOpenFiles": [
+    "Italiano/Romanticismo/Byron.md",
+    "Italiano/Romanticismo/L'eroe romantico.md",
+    "Italiano/Romanticismo/Il romanticismo in Europa.md",
+    "Italiano/Romanticismo/Il romanticismo in Inghilterra.md",
+    "Italiano/Romanticismo/La ballata del vecchio marinaio.md",
+    "Italiano/Romanticismo/test.md",
+    "Italiano/Romanticismo",
+    "Storia/Alessandro Barbero - 1848.md",
+    "Italiano/Il romanticismo in Europa.md",
+    "Italiano/Novalis - primo inno della notte.md",
+    "2024-03-12.md",
+    "Storia.md",
+    "Italiano",
+    "Storia"
+  ]
+}

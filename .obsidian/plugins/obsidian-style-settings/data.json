@@ -1,0 +1,8 @@
+{
+  "catppuccin-theme-settings@@catppuccin-theme-dark": "ctp-frappe",
+  "catppuccin-theme-settings@@catppuccin-theme-accents": "ctp-accent-blue",
+  "catppuccin-font-styles@@ctp-strikethrough": "var(--ctp-red)",
+  "catppuccin-font-styles@@ctp-italic": "var(--ctp-subtext0)",
+  "catppuccin-font-styles@@ctp-blockquote": "var(--ctp-accent)",
+  "catppuccin-font-styles@@ctp-bold": "var(--ctp-blue)"
+}
