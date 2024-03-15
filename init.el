@@ -5,7 +5,7 @@
              '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (package-refresh-contents)
-;;
+  ;;
 
 (use-package rust-mode) 
 (add-hook 'rust-mode-hook
