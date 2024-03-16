@@ -1,0 +1,18 @@
+[core]
+	editor = emacsclient -c
+[init]
+	defaultBranch = master
+[user]
+	email = 97975851+KelAnims@users.noreply.github.com
+	name = Kel
+[commit]
+	gpgsign = false
+[gpg]
+	program = /usr/bin/gpg2
+[diff]
+	tool = kompare
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
