@@ -41,6 +41,7 @@
  '(display-line-numbers t)
  '(electric-pair-mode t)
  '(make-backup-files nil)
+ '(markdown-hide-markup t)
  '(package-selected-packages
    '(yasnippet-snippets yasnippet magit cargo cargo-mode company flycheck lsp-ui lsp-mode markdown-mode catppuccin-theme rust-mode))
  '(require-final-newline t))
@@ -79,6 +80,7 @@
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map (kbd "M-RET") yas-maybe-expand)
+(global-set-key "" 'yas-minor-mode)
 
   ;; keys for navigation
 (define-key yas-keymap [(tab)]       nil)
