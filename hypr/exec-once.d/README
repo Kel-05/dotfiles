@@ -1,0 +1,6 @@
+It's recommended to link files from hypr/scripts/exec-once.d
+and put them here for all the apps you want to start at boot.
+
+example:
+
+ln -s ~/.config/hypr/scripts/exec-once.d/example.sh

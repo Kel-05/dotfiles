@@ -40,6 +40,7 @@
  '(auto-save-default nil)
  '(display-line-numbers t)
  '(electric-pair-mode t)
+ '(kill-whole-line t)
  '(make-backup-files nil)
  '(markdown-hide-markup t)
  '(package-selected-packages
@@ -89,4 +90,17 @@
 (define-key yas-keymap [backtab]     nil)
 (define-key yas-keymap (kbd "M-RET") 'yas-next-field-or-maybe-expand)
 (define-key yas-keymap (kbd "C-M-<return>") 'yas-prev)
+;;
+
+;; duplicate line
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+(global-set-key (kbd "C-d") 'duplicate-line)
 ;;

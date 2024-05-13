@@ -1,4 +1,4 @@
-function fastfetch --description 'alias fastfetch=fastfetch --logo arch2'
- command fastfetch --logo arch2 $argv
+function fastfetch --description 'alias fastfetch=fastfetch -l arch2'
+ command fastfetch -l arch2 $argv
         
 end
