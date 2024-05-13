@@ -38,9 +38,9 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
+ '(backward-delete-char-untabify-method 'hungry)
  '(display-line-numbers t)
  '(electric-pair-mode t)
- '(kill-whole-line t)
  '(make-backup-files nil)
  '(markdown-hide-markup t)
  '(package-selected-packages
@@ -82,6 +82,7 @@
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map (kbd "M-RET") yas-maybe-expand)
 (global-set-key "" 'yas-minor-mode)
+(global-set-key (kbd "C-k") 'kill-whole-line)
 
   ;; keys for navigation
 (define-key yas-keymap [(tab)]       nil)
