@@ -1,2 +1,3 @@
-#!/bin/bash 
-grimblast --notify copysave active Pictures/Screenshots/screenshot_$(date +%k.%M.%S_%e-%m-%Y).png
+#!/bin/bash
+dir=~/Pictures/Screenshots/screenshot_$(date +%H.%M.%S_%d-%m-%Y).png
+grimblast --notify copysave active $dir
