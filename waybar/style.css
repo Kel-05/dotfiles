@@ -76,6 +76,7 @@ button:hover {
     margin-right: 0;
 }
 
+
 #power-profiles-daemon {
     padding-right: 15px;
 }
@@ -125,6 +126,12 @@ button:hover {
     font-size: 17px;
 }
 
+#tray,
+#idle_inhibitor {
+    padding: 0 5px;
+    color: @text;
+}
+
 #backlight,
 #battery,
 #cpu,
@@ -135,9 +142,7 @@ button:hover {
 #pulseaudio,
 #wireplumber,
 #custom-media,
-#tray,
 #mode,
-#idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
