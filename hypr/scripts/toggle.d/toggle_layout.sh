@@ -8,3 +8,4 @@ if grep dwindle <<< "$(hyprctl getoption general:layout)"; then
 else
     hyprctl keyword general:layout dwindle
     notify-send -i $icon -t $time "Hyprctl layout" "Layout set to dwindle"
+fi
