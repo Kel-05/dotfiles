@@ -2,7 +2,7 @@
   ;; add melpa repository
 (require 'package)
 (add-to-list 'package-archives
-             '("melpa" . "https://melpa.org/packages/") t)
+	     '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
 (package-refresh-contents)
   ;;
@@ -31,7 +31,6 @@
   (global-company-mode))
 ;;
 
-(setq default-directory "/mnt/HDD/Documents/")
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -39,28 +38,51 @@
  ;; If there is more than one, they won't work right.
  '(auto-save-default nil)
  '(backward-delete-char-untabify-method 'hungry)
+ '(cua-mode t)
  '(display-line-numbers t)
  '(electric-pair-mode t)
+ '(global-display-line-numbers-mode t)
  '(make-backup-files nil)
+ '(markdown-code-lang-modes
+   '(("ocaml" . tuareg-mode)
+     ("elisp" . emacs-lisp-mode)
+     ("ditaa" . artist-mode)
+     ("asymptote" . asy-mode)
+     ("dot" . fundamental-mode)
+     ("sqlite" . sql-mode)
+     ("calc" . fundamental-mode)
+     ("C" . c-mode)
+     ("cpp" . c++-mode)
+     ("C++" . c++-mode)
+     ("screen" . shell-script-mode)
+     ("shell" . sh-mode)
+     ("bash" . sh-mode)
+     ("rust" . rust-mode)))
  '(markdown-hide-markup t)
  '(package-selected-packages
-   '(yasnippet-snippets yasnippet magit cargo cargo-mode company flycheck lsp-ui lsp-mode markdown-mode catppuccin-theme rust-mode))
- '(require-final-newline t))
+   '(yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck cargo-mode cargo markdown-mode rust-mode catppuccin-theme ##))
+ '(require-final-newline t)
+ '(save-place-mode t)
+ '(scroll-bar-mode nil)
+ '(tab-bar-mode t)
+ '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(markdown-blockquote-face ((t nil)))
+ '(markdown-code-face ((t (:background "#292c3c" :foreground "#c6d0f5"))))
+ '(markdown-inline-code-face ((t (:background "#292c3c")))))
 
 ;; Catppuccin theme
 (load-theme 'catppuccin :no-confirm)
-(setq catppuccin-flavor 'macchiato) ;; or 'latte, 'macchiato, or 'mocha
+(setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
 (catppuccin-reload)
-(set-face-attribute 'default nil :height 90)
+(set-face-attribute 'default nil :height 100)
 ;;
 
-;; wlclipboard - by yorickvP on Github
+;; credit: yorickvP on Github
 (setq wl-copy-process nil)
   (defun wl-copy (text)
     (setq wl-copy-process (make-process :name "wl-copy"
