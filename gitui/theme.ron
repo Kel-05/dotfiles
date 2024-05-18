@@ -1,0 +1,4 @@
+(
+    command_fg: Some(Rgb(48, 52, 70)),
+    selection_fg: Some(Rgb(48, 52, 70)),
+)
