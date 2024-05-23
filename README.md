@@ -14,7 +14,6 @@ I would say this list is sorted from most to least important, so do what you wan
 ## Unimportant configs
 The following files have little to no differences from their default counterparts and may be ignored.
 
-- kitty.conf
 - netbeans.conf
 - cpupower
 - grub

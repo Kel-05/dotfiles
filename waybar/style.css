@@ -76,14 +76,8 @@ button:hover {
     margin-right: 0;
 }
 
-
 #power-profiles-daemon {
     padding-right: 15px;
-}
-
-#custom-media {
-    color: @text;
-    min-width: 100px;
 }
 
 #tray > .passive {
@@ -133,6 +127,11 @@ button:hover {
 }
 
 #backlight,
+#custom-swaync {
+    padding: 0 5px;
+    color: @text;
+}
+
 #battery,
 #cpu,
 #memory,
@@ -141,7 +140,6 @@ button:hover {
 #network,
 #pulseaudio,
 #wireplumber,
-#custom-media,
 #mode,
 #scratchpad,
 #power-profiles-daemon,
