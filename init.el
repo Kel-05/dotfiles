@@ -39,6 +39,7 @@
  '(auto-save-default nil)
  '(backward-delete-char-untabify-method 'hungry)
  '(cua-mode t)
+ '(cursor-type 'bar)
  '(display-line-numbers t)
  '(electric-pair-mode t)
  '(global-display-line-numbers-mode t)
