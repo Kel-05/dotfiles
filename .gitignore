@@ -1,2 +1,3 @@
 hypr/exec-once.d/*.sh
 fish/fish_variables
+rofi/config.rasi
