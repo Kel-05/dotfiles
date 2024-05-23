@@ -4,8 +4,8 @@ icon=~/.local/share/icons/Catppuccin-Frappe/status/22/dialog-information.svg
 
 if grep dwindle <<< "$(hyprctl getoption general:layout)"; then
     hyprctl keyword general:layout master
-    notify-send -i $icon -t $time "Hyprctl layout" "Layout set to master"
+    notify-send -i $icon -a Hyprland -t $time "Hyprland" "Layout set to master"
 else
     hyprctl keyword general:layout dwindle
-    notify-send -i $icon -t $time "Hyprctl layout" "Layout set to dwindle"
+    notify-send -i $icon -a Hyprland -t $time "Hyprland" "Layout set to dwindle"
 fi
