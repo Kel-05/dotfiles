@@ -131,21 +131,33 @@ button:hover {
     color: @theme_text_color;
 }
 
-#bluetooth,
-#network {
-    padding-right: 7px;
+#bluetooth {
+    padding-right: 10px;
+    color: @theme_text_color;
+}
+
+#power-profiles-daemon {
+    padding-right: 5px;
     padding-left: 2px;
     color: @theme_text_color;
 }
 
-#battery,
-#power-profiles-daemon,
-#idle_inhibitor {
+#battery {
     padding: 0 5px;
     color: @theme_text_color;
 }
 
+#network {
+    color: @theme_text_color;
+}
+
 #backlight,
+#idle_inhibitor {
+    padding-right: 2px;
+    padding-left: 5px;
+    color: @theme_text_color;
+}
+
 #cpu,
 #memory,
 #disk,

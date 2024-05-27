@@ -28,9 +28,9 @@
          "on-scroll-down": "hyprctl dispatch workspace r-1",
          "format": "{icon}",
          "format-icons": {
-             "urgent": "",
-             "active": "",
-             "default": ""
+             "urgent": " ",
+             "active": " ",
+             "default": " "
          }
      },
     "keyboard-state": {
@@ -38,24 +38,14 @@
         "capslock": true,
         "format": "{name} {icon}",
         "format-icons": {
-            "locked": "",
-            "unlocked": ""
+            "locked": " ",
+            "unlocked": " "
         }
     },
-    "sway/mode": {
-        "format": "<span style=\"italic\">{}</span>"
-    },
-    "sway/scratchpad": {
-        "format": "{icon} {count}",
-        "show-empty": false,
-        "format-icons": ["", ""],
-        "tooltip": true,
-        "tooltip-format": "{app}: {title}"
-    },
     "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
+        "format-disconnected": "Disconnected  ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
         "unknown-tag": "N/A",
         "interval": 5,
         "consume-icons": {
@@ -82,8 +72,8 @@
         "on-click": "bash ~/.config/hypr/scripts/toggle.d/toggle_hypridle.sh",
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": " ",
+            "deactivated": " "
         }
     },
     "tray": {
@@ -98,11 +88,11 @@
 	"format-alt": "{:%a %d %B %Y}"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}%  ",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "{}%  "
     },
     "temperature": {
         // "thermal-zone": 2,
@@ -115,7 +105,7 @@
     "backlight": {
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
         "states": {
@@ -132,9 +122,6 @@
         // "format-full": "",
         "format-icons": [" ", " ", " ", " ", " "]
     },
-    "battery#bat2": {
-        "bat": "BAT2"
-    },
     "power-profiles-daemon": {
       "format": "{icon}",
       "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
@@ -142,13 +129,13 @@
       "format-icons": {
         "default": "",
         "performance": "",
-        "balanced": "",
-        "power-saver": ""
+        "balanced": " ",
+        "power-saver": " "
       }
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
+        "format-wifi": "{signalStrength}%  ",
         "format-ethernet": "",
         "tooltip-format": "Connected to {essid}",
         "format-linked": "",
@@ -170,7 +157,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", ""]
+            "default": ["", "", " "]
         },
         "on-click": "pavucontrol-qt"
     },
@@ -186,14 +173,14 @@
     "tooltip": false,
     "format": "{} {icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": " ",
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
       "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": " ",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
       "inhibited-none": "" ,
       "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": " "
+      "dnd-inhibited-none": ""
     },
     "return-type": "json",
     "exec": "swaync-client -swb",
