@@ -14,12 +14,9 @@
     ],
     "modules-right": [
         "tray",
-	"idle_inhibitor",
-        "power-profiles-daemon",
         "pulseaudio",
-        "network",
-	"backlight",
-        "battery",
+        "group/connections",
+	"group/battery",
 	"custom/swaync"
     ],
      // Modules configuration
@@ -27,8 +24,8 @@
          "disable-scroll": false,
          "all-outputs": true,
          "warp-on-scroll": false,
-	 "on-scroll-up": "hyprctl dispatch workspace e+1",
-         "on-scroll-down": "hyprctl dispatch workspace e-1",
+	 "on-scroll-up": "hyprctl dispatch workspace r+1",
+         "on-scroll-down": "hyprctl dispatch workspace r-1",
          "format": "{icon}",
          "format-icons": {
              "urgent": "",
@@ -133,7 +130,7 @@
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
-        "format-icons": ["", "", "", "", ""]
+        "format-icons": [" ", " ", " ", " ", " "]
     },
     "battery#bat2": {
         "bat": "BAT2"
@@ -151,12 +148,12 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "",
+        "tooltip-format": "Connected to {essid}",
+        "format-linked": "",
+        "format-disconnected": "⚠",
+	"format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -165,7 +162,7 @@
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": " ",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -175,7 +172,15 @@
             "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "pavucontrol"
+        "on-click": "pavucontrol-qt"
+    },
+    "bluetooth": {
+	"format": "{status} ",
+	"format-connected": "{device_alias} ",
+	"tooltip-format": "{controller_alias}\t{controller_address}",
+	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
+	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	"on-click": "overskride"
     },
     "custom/swaync": {
     "tooltip": false,
@@ -195,5 +200,31 @@
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
     "escape": true
+  },
+  "group/battery": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "power",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+    "battery",
+    "idle_inhibitor",
+    "power-profiles-daemon",
+    "backlight",
+    ]
+  },
+  "group/connections": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "connections",
+        "transition-left-to-right": false,
+    },
+    "modules": [
+    "network",
+    "bluetooth",
+    ]
   }
 }
