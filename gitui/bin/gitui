@@ -2,5 +2,5 @@
 if ! ssh-add -L > /dev/null; then
    ssh-add ~/.ssh/id_ed25519 && gitui
 else
-   gitui
+   gitui $@
 fi
