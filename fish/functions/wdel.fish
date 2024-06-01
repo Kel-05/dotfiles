@@ -1,4 +1,4 @@
-function wdel --wraps='nmcli con delete' --description 'alias wdel=nmcli con delete'
-  nmcli con delete $argv
+function wdel --wraps='nmcli connection delete' --description 'alias wdel=nmcli connection delete'
+  nmcli connection delete $argv
         
 end
