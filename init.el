@@ -7,18 +7,8 @@
 (package-refresh-contents)
   ;;
 
-(use-package rust-mode) 
-(add-hook 'rust-mode-hook
-	  (lambda () (setq indent-tabs-mode nil)))
-(add-hook 'rust-mode-hook
-	  (lambda () (setq cargo-minor-mode t)))
-(add-hook 'rust-mode-hook #'lsp)
-
 (use-package markdown-mode)
-(use-package cargo)
-(use-package cargo-mode)
 (use-package flycheck)
-
 (use-package lsp-ui)
 (use-package lsp-mode)
 (use-package magit)
@@ -61,7 +51,7 @@
      ("rust" . rust-mode)))
  '(markdown-hide-markup t)
  '(package-selected-packages
-   '(yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck cargo-mode cargo markdown-mode rust-mode catppuccin-theme ##))
+   '(yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
  '(require-final-newline t)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -83,7 +73,7 @@
 (set-face-attribute 'default nil :height 100)
 ;;
 
-;; credit: yorickvP on Github
+;; wlcopy - credit: yorickvP on Github
 (setq wl-copy-process nil)
   (defun wl-copy (text)
     (setq wl-copy-process (make-process :name "wl-copy"
