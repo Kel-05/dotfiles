@@ -11,25 +11,13 @@ I would say this list is sorted from most to least important, so do what you wan
 - .obsidian/ - config and plugins for Obsidian.
 - fish/ - config and plugins for fish shell.
 
-## Unimportant configs
-The following files have little to no differences from their default counterparts and may be ignored.
-
-- netbeans.conf
-- cpupower
-- grub
-- user.js (forked from Betterfox)
-- cava/
-
 # Dependencies
 Other than the software I mentioned earlier or that is explicited in the repo files, you're going to need the following in order for the init.el and hypr* config to work properly:
 
 ## init.el
 you're going to need the [MELPA](https://melpa.org/#/) package repository in order to install most of these packages.
 
-- rust-mode
 - markdown-mode
-- cargo-mode
-- cargo
 - flycheck
 - lsp-ui
 - lsp-mode
