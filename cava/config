@@ -1,0 +1,15 @@
+[general]
+autosens = 1
+sensitivity = 100
+
+lower_cutoff_freq = 20
+higher_cutoff_freq = 20000
+
+[input]
+
+sample_rate = 48000
+sample_bits = 32
+
+[smoothing]
+
+monstercat = 1
