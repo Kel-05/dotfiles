@@ -1,2 +1,2 @@
 #!/bin/bash
-hyprctl setcursor Catppuccin-Frappe-Blue 24
+hyprctl setcursor catppuccin-frappe-blue-cursors 24
