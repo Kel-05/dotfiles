@@ -1,3 +1,4 @@
+@import "frappe.css";
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
@@ -5,8 +6,8 @@
 }
 
 window#waybar {
-    background-color: @theme_base_color;
-    color: @theme_text_color;
+    background-color: @base;
+    color: @text;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -39,25 +40,25 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px @theme_text_color;
+    box-shadow: inset 0 -3px @text;
 }
 
 #workspaces button {
     padding: 0 5px;
     background-color: transparent;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #workspaces button:hover {
-    background: @theme_base_color;
+    background: @base;
 }
 
 #workspaces button.focused {
-    box-shadow: inset 0 -3px @theme_text_color;
+    box-shadow: inset 0 -3px @text;
 }
 
 #mode {
-    box-shadow: inset 0 -3px @theme_text_color;
+    box-shadow: inset 0 -3px @text;
 }
 
 #window,
@@ -88,7 +89,7 @@ button:hover {
 }
 
 #language {
-    color: @theme_text_color;
+    color: @text;
     padding: 0 5px;
     margin: 0 5px;
     min-width: 16px;
@@ -111,51 +112,51 @@ button:hover {
 
 #privacy-item {
     padding: 0 5px;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #clock {
-    color: @theme_text_color;
+    color: @text;
     font-size: 17px;
 }
 
 #tray {
     padding: 0 5px;
-    color: @theme_text_color;
-    background: @borders;
+    color: @text;
+    background: @surface0;
     border-radius: 7px;
 }
 
 #custom-swaync {
     padding-right: 5px;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #bluetooth {
     padding-right: 10px;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #power-profiles-daemon {
     padding-right: 5px;
     padding-left: 2px;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #battery {
     padding: 0 5px;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #network {
-    color: @theme_text_color;
+    color: @text;
 }
 
 #backlight,
 #idle_inhibitor {
     padding-right: 2px;
     padding-left: 5px;
-    color: @theme_text_color;
+    color: @text;
 }
 
 #cpu,
@@ -168,6 +169,6 @@ button:hover {
 #scratchpad,
 #mpd {
     padding: 0 10px;
-    color: @theme_text_color;
+    color: @text;
 }
 
