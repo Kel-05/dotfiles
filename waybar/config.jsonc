@@ -1,16 +1,19 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top", // Waybar at top layer
-    // "position": "bottom", // Waybar position (top|bottom|left|right)
-    "height": 24, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
-    "spacing": 0, // Gaps between modules (4px)
+    "layer": "top",
+    "position": "top",
+    "margin-top": 6,
+    "margin-bottom": 0,
+    "margin-right": 9,
+    "margin-left": 9,
+    "spacing": 0,
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces"
     ],
     "modules-center": [
-        "clock"
+        "clock",
+	"custom/media"
     ],
     "modules-right": [
         "tray",
@@ -30,44 +33,16 @@
          "format-icons": {
              "urgent": " ",
              "active": " ",
-             "default": " "
-         }
+             "default": " "
+         },
+	 "persistent-workspaces": {
+	     "1": [],
+	     "2": [],
+	     "3": [],
+	     "4": [],
+	     "5": []
+	 }
      },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": " ",
-            "unlocked": " "
-        }
-    },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}%  ",
-        "format-disconnected": "Disconnected  ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped  ",
-        "unknown-tag": "N/A",
-        "interval": 5,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
-    },
     "idle_inhibitor": {
         "on-click": "bash ~/.config/hypr/scripts/hypridle.sh",
         "format": "{icon}",
@@ -77,49 +52,25 @@
         }
     },
     "tray": {
-        // "icon-size": 21,
         "spacing": 10
     },
     "clock": {
-        // "timezone": "America/New_York",
 	"interval": 1,
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format": "{:%H:%M:%S}", 
-	"format-alt": "{:%a %d %B %Y}"
-    },
-    "cpu": {
-        "format": "{usage}%  ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}%  "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+	"format": "  {:%H:%M:%S}", 
+	"format-alt": "  {:%a %d %B %Y}"
     },
     "backlight": {
-        // "device": "acpi_video1",
+        "tooltip": false,
         "format": "{percent}% {icon}",
         "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
-        "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
-        },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
         "format-icons": [" ", " ", " ", " ", " "]
     },
     "power-profiles-daemon": {
@@ -134,7 +85,6 @@
       }
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
         "format-wifi": "{signalStrength}%  ",
         "format-ethernet": "",
         "tooltip-format": "Connected to {essid}",
@@ -143,7 +93,6 @@
 	"format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
         "format-bluetooth": "{volume}% {icon} {format_source}",
         "format-bluetooth-muted": " {icon} {format_source}",
@@ -188,30 +137,40 @@
     "on-click-right": "swaync-client -d -sw",
     "escape": true
   },
+  "custom/media": {
+    "format": " ",
+    "format-alt": " ",
+    "tooltip": false,
+    "on-click": "playerctl play-pause",
+    "on-click-right": "playerctl stop",
+    "smooth-scrolling-threshold": 10,
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous",
+},
   "group/battery": {
     "orientation": "inherit",
     "drawer": {
-        "transition-duration": 500,
-        "children-class": "power",
-        "transition-left-to-right": false,
+      "transition-duration": 500,
+      "children-class": "power",
+      "transition-left-to-right": false,
     },
     "modules": [
-    "battery",
-    "idle_inhibitor",
-    "power-profiles-daemon",
-    "backlight",
+      "battery",
+      "idle_inhibitor",
+      "power-profiles-daemon",
+      "backlight",
     ]
   },
   "group/connections": {
     "orientation": "inherit",
     "drawer": {
-        "transition-duration": 500,
-        "children-class": "connections",
-        "transition-left-to-right": false,
+      "transition-duration": 500,
+      "children-class": "connections",
+      "transition-left-to-right": false,
     },
     "modules": [
-    "network",
-    "bluetooth",
+      "network",
+      "bluetooth",
     ]
   }
 }
