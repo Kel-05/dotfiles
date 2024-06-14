@@ -66,6 +66,8 @@
  '(dir-treeview-show-in-side-window t)
  '(display-line-numbers t)
  '(electric-pair-mode t)
+ '(font-use-system-font t)
+ '(fringe-mode 0 nil (fringe))
  '(global-display-line-numbers-mode t)
  '(make-backup-files nil)
  '(markdown-code-lang-modes
@@ -84,12 +86,12 @@
      ("bash" . sh-mode)
      ("rust" . rust-mode)))
  '(markdown-hide-markup t)
+ '(menu-bar-mode nil)
  '(package-selected-packages
    '(dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
  '(require-final-newline t)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
- '(tab-bar-mode t)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
