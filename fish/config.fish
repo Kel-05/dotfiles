@@ -4,5 +4,5 @@ if status is-interactive
     set SHELL_MOMMYS_LITTLE "boy"
     set SHELL_MOMMYS_ONLY_NEGATIVE "true"
     set -g man_bold -o 8caaee
-    set -g man_standout -b 8caaee 303446
+    set -g man_standout -b c6d0f5 303446
 end
