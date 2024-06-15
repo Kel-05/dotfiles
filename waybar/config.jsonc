@@ -29,7 +29,7 @@
          "warp-on-scroll": false,
 	 "on-scroll-up": "hyprctl dispatch workspace r+1",
          "on-scroll-down": "hyprctl dispatch workspace r-1",
-         "format": "{icon}",
+         "format": "<big>{icon}</big>",
          "format-icons": {
              "urgent": " ",
              "active": " ",
@@ -62,12 +62,11 @@
     },
     "backlight": {
         "tooltip": false,
-        "format": "{percent}% {icon}",
+        "format": "{percent}% <big>{icon}</big>",
         "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
     },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
+        "format": "{capacity}% <big>{icon}</big>",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
@@ -85,11 +84,11 @@
       }
     },
     "network": {
-        "format-wifi": "{signalStrength}%  ",
-        "format-ethernet": "",
+        "format-wifi": "{signalStrength}% <big></big>   ",
+        "format-ethernet": "<big></big>",
         "tooltip-format": "Connected to {essid}",
-        "format-linked": "",
-        "format-disconnected": "⚠",
+        "format-linked": "<big></big>",
+        "format-disconnected": "<big>⚠</big> ",
 	"format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -122,14 +121,14 @@
     "tooltip": false,
     "format": "{} {icon}",
     "format-icons": {
-      "notification": "<span foreground='red'><sup></sup></span>",
-      "none": "",
-      "dnd-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-none": "",
-      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "inhibited-none": "" ,
-      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
-      "dnd-inhibited-none": ""
+      "notification": "<big>󰂚</big>",
+      "none": "<big>󰂜</big>",
+      "dnd-notification": "<big>󰂛</big>",
+      "dnd-none": "<big>󰪑</big>",
+      "inhibited-notification": "<big>󰂚</big>",
+      "inhibited-none": "<big>󰂜</big>" ,
+      "dnd-inhibited-notification": "<big>󰂛</big>",
+      "dnd-inhibited-none": "<big>󰪑</big>"
     },
     "return-type": "json",
     "exec": "swaync-client -swb",

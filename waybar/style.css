@@ -55,6 +55,7 @@ button:hover {
     padding: 0 3px;
 }
 
+
 #tray > .passive {
     -gtk-icon-effect: dim;
 }
