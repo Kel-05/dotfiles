@@ -24,23 +24,21 @@
     ],
      // Modules configuration
      "hyprland/workspaces": {
-         "disable-scroll": false,
          "all-outputs": true,
+         "disable-scroll": false,
          "warp-on-scroll": false,
+	 "smooth-scrolling-threshold": 5,
 	 "on-scroll-up": "hyprctl dispatch workspace r+1",
          "on-scroll-down": "hyprctl dispatch workspace r-1",
          "format": "<big>{icon}</big>",
          "format-icons": {
              "urgent": " ",
              "active": " ",
-             "default": " "
+	     "empty": " ",
+             "default": " "
          },
 	 "persistent-workspaces": {
-	     "1": [],
-	     "2": [],
-	     "3": [],
-	     "4": [],
-	     "5": []
+	     "*": 5
 	 }
      },
     "idle_inhibitor": {
