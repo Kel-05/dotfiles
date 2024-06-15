@@ -1,5 +1,5 @@
-# My dotfiles
-My configuration files for all the software I use regularly and daily.
+# # Warning
+This README is outdated af. I'll update it once I find the time.
 
 # Descriptions
 If you have trouble navigating this repository, here's a short description of some of the files.
