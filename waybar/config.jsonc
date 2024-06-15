@@ -54,9 +54,9 @@
     },
     "clock": {
 	"interval": 1,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-	"format": "  {:%H:%M:%S}", 
-	"format-alt": "  {:%a %d %B %Y}"
+	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	"format": "<big>  {:%H:%M:%S}</big>", 
+	"format-alt": "<big>  {:%a %d %B %Y}</big>"
     },
     "backlight": {
         "tooltip": false,
