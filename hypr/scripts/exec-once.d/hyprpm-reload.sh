@@ -1,5 +1,5 @@
 #!/bin/bash
-sleep 2
+sleep 3
 hyprpm reload -n
 sleep 1
 hyprctl reload
