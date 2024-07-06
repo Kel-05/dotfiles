@@ -98,17 +98,23 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(dir-treeview-archive-face ((t (:foreground "#e78284" :inherit dir-treeview-default-filename-face))))
+ '(dir-treeview-audio-face ((t (:foreground "#81c8be" :inherit dir-treeview-default-filename-face))))
  '(dir-treeview-control-face ((t (:foreground "#c6d0f5"))) t)
  '(dir-treeview-control-mouse-face ((t (:background "#C1FFC1" :foreground "#232634"))))
+ '(dir-treeview-directory-face ((t (:foreground "#8caaee" :inherit dir-treeview-default-filename-face))))
+ '(dir-treeview-executable-face ((t (:foreground "#e78284" :inherit dir-treeview-default-filename-face))))
  '(dir-treeview-file-group-face ((t (:foreground "#e78284"))))
  '(dir-treeview-file-mode-face ((t (:foreground "#ca9ee6"))))
  '(dir-treeview-file-owner-face ((t (:foreground "#e78284"))))
  '(dir-treeview-file-size-face ((t (:foreground "#8caaee"))))
  '(dir-treeview-file-time-face ((t (:foreground "#e78284"))))
  '(dir-treeview-highlight-face ((t (:background "#a6d189" :foreground "#232634"))))
+ '(dir-treeview-image-face ((t (:foreground "#ca9ee6" :inherit dir-treeview-default-filename-face))))
  '(dir-treeview-label-mouse-face ((t (:background "#C1FFC1" :foreground "#232634"))))
  '(dir-treeview-select-face ((t (:background "#97FFFF" :foreground "#232634"))))
  '(dir-treeview-start-dir-face ((t (:background "#D9D9D9" :foreground "#232634"))))
+ '(dir-treeview-video-face ((t (:foreground "#ca9ee6" :inherit dir-treeview-default-filename-face))))
  '(markdown-blockquote-face ((t nil)))
  '(markdown-code-face ((t (:background "#292c3c" :foreground "#c6d0f5"))))
  '(markdown-inline-code-face ((t (:background "#292c3c")))))
