@@ -14,7 +14,7 @@ window#waybar {
 window#waybar box.modules-right {
     background-color: @base;
     border-radius: 7px;
-    box-shadow: inset -1 -2px @blue;
+    box-shadow: inset -1px -2px @blue;
 }
 
 window#waybar box.modules-center {
@@ -26,11 +26,12 @@ window#waybar box.modules-center {
 window#waybar box.modules-left {
     background-color: @base;
     border-radius: 7px;
-    box-shadow: inset 1 -2px @red;
+    box-shadow: inset 1px -2px @red;
 }
 
 *.module {
     padding: 0 5px;
+    padding-bottom: 2px;
 }
 
 .modules-right > widget:last-child > *.module {

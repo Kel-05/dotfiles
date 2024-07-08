@@ -1,156 +1,162 @@
 // -*- mode: jsonc -*-
 {
-    "layer": "top",
-    "position": "top",
-    "margin-top": 6,
-    "margin-bottom": 0,
-    "margin-right": 9,
-    "margin-left": 9,
-    "spacing": 0,
-    // Choose the order of the modules
-    "modules-left": [
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        "clock",
-	"custom/media"
-    ],
-    "modules-right": [
-        "tray",
-        "pulseaudio",
-        "group/connections",
-	"group/power",
-	"custom/swaync"
-    ],
-     // Modules configuration
-     "hyprland/workspaces": {
-         "all-outputs": true,
-         "disable-scroll": false,
-         "warp-on-scroll": false,
-	 "smooth-scrolling-threshold": 5,
-	 "on-scroll-up": "hyprctl dispatch workspace r+1",
-         "on-scroll-down": "hyprctl dispatch workspace r-1",
-         "format": "<big>{icon}</big>",
-         "format-icons": {
-             "urgent": "",
-             "active": "",
-	     "empty": "",
-             "default": ""
-         },
-	 "persistent-workspaces": {
-	     "*": 5
-	 }
-     },
-    "idle_inhibitor": {
-        "on-click": "bash ~/.config/hypr/scripts/hypridle.sh",
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
-    "tray": {
-        "spacing": 10
-    },
-    "clock": {
-	"interval": 1,
-	"tooltip-format": "<big><tt>{calendar}</tt></big>",
-	"format": "<span font_size='14pt'></span> <big>{:%H:%M:%S}</big>", 
-	"format-alt": "<span font_size='14pt'></span> <big>{:%a %d %B %Y}</big>",
-	"on-click-right": "betterbird -calendar",
-	"calendar": {
-                    "mode": "month",
-                    "format": {
-                              "months":     "<span color='#e78284'>{}</span>",
-                              "days":       "<span color='#c6d0f5'>{}</span>",
-                              "weekdays":   "<span color='#737994'>{}</span>",
-                              "today":      "<span color='#8caaee'><b>{}</b></span>"
-                    }
-        }
-    },
-    "backlight": {
-        "tooltip": false,
-        "format": "{percent}% <big>{icon}</big>",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
-    },
-    "battery": {
-        "format": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        "format-alt": "{time} {icon}",
-        "format-icons": ["", "", "", "", ""]
-    },
-    "power-profiles-daemon": {
-      "format": "{icon}",
-      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-      "tooltip": true,
-      "format-icons": {
-        "default": "",
-        "performance": "",
-        "balanced": "",
-        "power-saver": ""
-      }
-    },
-    "network": {
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "",
-        "tooltip-format": "Connected to {essid}",
-        "format-linked": "",
-        "format-disconnected": "⚠",
-	"format-alt": "{ifname}: {ipaddr}/{cidr}"
-    },
-    "pulseaudio": {
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol-qt"
-    },
-    "bluetooth": {
-	"format": "{status} ",
-	"format-connected": "{device_alias} ",
-	"tooltip-format": "{controller_alias}\t{controller_address}",
-	"tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
-	"tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
-	"on-click": "overskride"
-    },
-    "custom/swaync": {
-    "tooltip": false,
-    "format": "{} <big>{icon}</big>",
+  "layer": "top",
+  "position": "top",
+  "margin-top": 6,
+  "margin-bottom": 0,
+  "margin-right": 9,
+  "margin-left": 9,
+  "spacing": 0,
+  // Choose the order of the modules
+  "modules-left": [
+    "hyprland/workspaces"
+  ],
+  "modules-center": [
+    "clock",
+    "custom/media"
+  ],
+  "modules-right": [
+    "tray",
+    "pulseaudio",
+    "group/connections",
+    "group/power",
+    "custom/swaync"
+  ],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "all-outputs": true,
+    "disable-scroll": false,
+    "warp-on-scroll": false,
+    "smooth-scrolling-threshold": 5,
+    "on-scroll-up": "hyprctl dispatch workspace r+1",
+    "on-scroll-down": "hyprctl dispatch workspace r-1",
+    "format": "<big>{icon}</big>",
     "format-icons": {
-      "notification": "󰂚",
-      "none": "󰂜",
-      "dnd-notification": "󰂛",
-      "dnd-none": "󰪑",
-      "inhibited-notification": "󰂚",
-      "inhibited-none": "󰂜" ,
-      "dnd-inhibited-notification": "󰂛",
-      "dnd-inhibited-none": "󰪑"
+      "urgent": "<span color='#e5c890'></span>",
+      "active": "",
+      "empty": "",
+      "default": ""
     },
+    "persistent-workspaces": {
+      "*": 5
+    }
+  },
+  "idle_inhibitor": {
+    "on-click": "bash ~/.config/hypr/scripts/hypridle.sh",
+    "format": "{icon}",
+    "format-icons": {
+      "activated": "",
+      "deactivated": "<span color='#737994'></span>"
+    }
+  },
+  "tray": {
+    "icon-size": 16,
+    "spacing": 10
+  },
+  "clock": {
+    "interval": 1,
+    "on-click-right": "betterbird -calendar",
+    "tooltip-format": "<big><tt>{calendar}</tt></big>",
+    "format": "<span font_size='14pt'></span> <big>{:%H:%M:%S}</big>",
+    "format-alt": "<span font_size='14pt'></span> <big>{:%a %d %B %Y}</big>",
+    "calendar": {
+      "mode": "month",
+      "format": {
+        "months":   "<span color='#e78284'>{}</span>",
+        "days":     "<span color='#c6d0f5'>{}</span>",
+        "weekdays": "<span color='#737994'>{}</span>",
+        "today":    "<span color='#8caaee'><b>{}</b></span>"
+      }
+    }
+  },
+  "backlight": {
+    "tooltip": false,
+    "format": "{percent}% <big>{icon}</big>",
+    "format-icons": ["", "", "", "", "", "", "", "", ""]
+  },
+  "battery": {
+    "format": "{capacity}% <big>{icon}</big>",
+    "format-alt": "{time} <big>{icon}</big>",
+    "format-charging": "{capacity}% <span color='#a6d189'></span>",
+    "format-plugged": "{capacity}% ",
+    "format-full": "{capacity}% <span color='#a6d189'><big>󱟢</big></span>",
+    "format-critical": "{capacity}% <span color='#e78284'><big>󱃍</big></span>",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "states": {
+      "critical": 5
+    }
+  },
+  "power-profiles-daemon": {
+    "format": "{icon}",
+    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+    "tooltip": true,
+    "format-icons": {
+      "default": "<span color='##e78284'></span>",
+      "performance": "<span color='#e78284'></span>",
+      "balanced": "<span color='#8caaee'></span>",
+      "power-saver": "<span color='#a6d189'></span>"
+    }
+  },
+  "network": {
+    "format-wifi": "{signalStrength}% <span color='#8caaee'><big></big></span>",
+    "format-ethernet": "<big></big>",
+    "tooltip-format": "Connected to <span color='#8caaee'>{essid}</span>",
+    "format-linked": "<big></big>",
+    "format-disconnected": "<span color='#e78284'><big>⚠</big></span>",
+    "format-alt": "{ifname}: {ipaddr}/{cidr}"
+  },
+  "pulseaudio": {
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon}<span color='#8caaee'></span> {format_source}",
+    "format-bluetooth-muted": "<span color='#737994'></span> {icon}<span color='#8caaee'></span> {format_source}",
+    "on-click": "pavucontrol-qt",
+    "format-muted": "<span color='#737994'></span> {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "<span color='#737994'></span>",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": ["", "", ""]
+    }
+  },
+  "bluetooth": {
+    "on-click": "overskride",
+    "format": "{status} <span color='#8caaee'><big></big></span>",
+    "format-connected": "{device_alias} <span color='#8caaee'><big></big></span>",
+    "tooltip-format": "{controller_alias}\t{controller_address}",
+    "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+  },
+  "custom/swaync": {
+    "escape": true,
+    "tooltip": false,
     "return-type": "json",
     "exec": "swaync-client -swb",
     "on-click": "swaync-client -t -sw",
     "on-click-right": "swaync-client -d -sw",
-    "escape": true
+    "format": "{} <big>{icon}</big>",
+    "format-icons": {
+      "notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "<span color='#737994'>󰂛</span>",
+      "dnd-none": "<span color='#737994'>󰪑</span>",
+      "inhibited-notification": "󰂚",
+      "inhibited-none": "󰂜" ,
+      "dnd-inhibited-notification": "<span color='#737994'>󰂛</span>",
+      "dnd-inhibited-none": "<span color='#737994'>󰪑</span>"
+    }
   },
   "custom/media": {
+    "tooltip": false,
     "format": "",
     "format-alt": "",
-    "tooltip": false,
+    "smooth-scrolling-threshold": 10,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
-    "smooth-scrolling-threshold": 10,
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
 },
