@@ -150,6 +150,7 @@
 (global-set-key "" 'yas-minor-mode)
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "<f9>") 'dir-treeview)
+(global-set-key (kbd "C-<tab>") 'other-window)
 
   ;; keys for navigation
 (define-key yas-keymap [(tab)]       nil)
