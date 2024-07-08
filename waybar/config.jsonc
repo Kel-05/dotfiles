@@ -54,9 +54,19 @@
     },
     "clock": {
 	"interval": 1,
-	"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+	"tooltip-format": "<big><tt>{calendar}</tt></big>",
 	"format": "<span font_size='14pt'></span> <big>{:%H:%M:%S}</big>", 
-	"format-alt": "<span font_size='14pt'></span> <big>{:%a %d %B %Y}</big>"
+	"format-alt": "<span font_size='14pt'></span> <big>{:%a %d %B %Y}</big>",
+	"on-click-right": "betterbird -calendar",
+	"calendar": {
+                    "mode": "month",
+                    "format": {
+                              "months":     "<span color='#e78284'>{}</span>",
+                              "days":       "<span color='#c6d0f5'>{}</span>",
+                              "weekdays":   "<span color='#737994'>{}</span>",
+                              "today":      "<span color='#8caaee'><b>{}</b></span>"
+                    }
+        }
     },
     "backlight": {
         "tooltip": false,
