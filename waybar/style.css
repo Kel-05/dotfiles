@@ -1,7 +1,7 @@
 @import "frappe.css";
 * {
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-family: "Noto Sans, FontAwesome, Symbols Nerd Font";
+    font-size: 14px;
 }
 
 window#waybar {
@@ -29,6 +29,25 @@ window#waybar box.modules-left {
     box-shadow: inset 1 -2px @red;
 }
 
+*.module {
+    padding: 0 5px;
+}
+
+.modules-right > widget:last-child > *.module {
+    margin-right: 5px;
+}
+
+.modules-right > widget:first-child > *.module {
+    margin-left: 5px;
+}
+
+.modules-center > widget:last-child > *.module {
+    margin-right: 3px;
+}
+
+.modules-center > widget:first-child > *.module {
+    margin-left: 3px;
+}
 
 button {
     /* Avoid rounded borders under each button name */
@@ -41,20 +60,9 @@ button:hover {
 }
 
 #workspaces button {
-    padding: 0 5px;
     color: @text;
+    padding: 0 4px;
 }
-
-
-#clock {
-    padding-right: 5px;
-    padding-left: 7px;
-}
-
-#custom-media {
-    padding: 0 3px;
-}
-
 
 #tray > .passive {
     -gtk-icon-effect: dim;
@@ -62,40 +70,4 @@ button:hover {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-}
-
-#tray {
-    padding-right: 5px;
-    padding-left: 10px;
-}
-
-#pulseaudio {
-    padding-right:  10px;
-    padding-left:  5px;
-}
-
-#bluetooth {
-    padding-right: 10px;
-}
-
-#idle_inhibitor {
-    padding-right: 2px;
-    padding-left: 5px;
-}
-
-#power-profiles-daemon {
-    padding-right: 7px;
-    padding-left: 2px;
-}
-
-#backlight {
-    padding-left: 5px;;
-}
-
-#battery {
-    padding: 0 5px;
-}
-
-#custom-swaync {
-    padding-right: 12px;
 }

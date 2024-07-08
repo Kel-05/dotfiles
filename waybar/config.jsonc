@@ -19,7 +19,7 @@
         "tray",
         "pulseaudio",
         "group/connections",
-	"group/battery",
+	"group/power",
 	"custom/swaync"
     ],
      // Modules configuration
@@ -32,10 +32,10 @@
          "on-scroll-down": "hyprctl dispatch workspace r-1",
          "format": "<big>{icon}</big>",
          "format-icons": {
-             "urgent": " ",
-             "active": " ",
-	     "empty": " ",
-             "default": " "
+             "urgent": "",
+             "active": "",
+	     "empty": "",
+             "default": ""
          },
 	 "persistent-workspaces": {
 	     "*": 5
@@ -45,8 +45,8 @@
         "on-click": "bash ~/.config/hypr/scripts/hypridle.sh",
         "format": "{icon}",
         "format-icons": {
-            "activated": " ",
-            "deactivated": " "
+            "activated": "",
+            "deactivated": ""
         }
     },
     "tray": {
@@ -61,14 +61,14 @@
     "backlight": {
         "tooltip": false,
         "format": "{percent}% <big>{icon}</big>",
-        "format-icons": [" ", " ", " ", " ", " ", " ", " ", " ", " "]
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
-        "format": "{capacity}% <big>{icon}</big>",
+        "format": "{capacity}% {icon}",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
-        "format-icons": [" ", " ", " ", " ", " "]
+        "format-icons": ["", "", "", "", ""]
     },
     "power-profiles-daemon": {
       "format": "{icon}",
@@ -77,16 +77,16 @@
       "format-icons": {
         "default": "",
         "performance": "",
-        "balanced": " ",
-        "power-saver": " "
+        "balanced": "",
+        "power-saver": ""
       }
     },
     "network": {
-        "format-wifi": "{signalStrength}% <big></big>   ",
-        "format-ethernet": "<big></big>",
+        "format-wifi": "{signalStrength}% ",
+        "format-ethernet": "",
         "tooltip-format": "Connected to {essid}",
-        "format-linked": "<big></big>",
-        "format-disconnected": "<big>⚠</big> ",
+        "format-linked": "",
+        "format-disconnected": "⚠",
 	"format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
@@ -95,7 +95,7 @@
         "format-bluetooth-muted": " {icon} {format_source}",
         "format-muted": " {format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": " ",
+        "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",
@@ -103,7 +103,7 @@
             "phone": "",
             "portable": "",
             "car": "",
-            "default": ["", "", " "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol-qt"
     },
@@ -117,16 +117,16 @@
     },
     "custom/swaync": {
     "tooltip": false,
-    "format": "{} {icon}",
+    "format": "{} <big>{icon}</big>",
     "format-icons": {
-      "notification": "<big>󰂚</big>",
-      "none": "<big>󰂜</big>",
-      "dnd-notification": "<big>󰂛</big>",
-      "dnd-none": "<big>󰪑</big>",
-      "inhibited-notification": "<big>󰂚</big>",
-      "inhibited-none": "<big>󰂜</big>" ,
-      "dnd-inhibited-notification": "<big>󰂛</big>",
-      "dnd-inhibited-none": "<big>󰪑</big>"
+      "notification": "󰂚",
+      "none": "󰂜",
+      "dnd-notification": "󰂛",
+      "dnd-none": "󰪑",
+      "inhibited-notification": "󰂚",
+      "inhibited-none": "󰂜" ,
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑"
     },
     "return-type": "json",
     "exec": "swaync-client -swb",
@@ -135,8 +135,8 @@
     "escape": true
   },
   "custom/media": {
-    "format": " ",
-    "format-alt": " ",
+    "format": "",
+    "format-alt": "",
     "tooltip": false,
     "on-click": "playerctl play-pause",
     "on-click-right": "playerctl stop",
@@ -144,7 +144,7 @@
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
 },
-  "group/battery": {
+  "group/power": {
     "orientation": "inherit",
     "drawer": {
       "transition-duration": 500,
