@@ -62,10 +62,10 @@
     "calendar": {
       "mode": "month",
       "format": {
-        "months":   "<span color='#e78284'>{}</span>",
+        "months":   "<span color='#8caaee'>{}</span>",
         "days":     "<span color='#c6d0f5'>{}</span>",
         "weekdays": "<span color='#737994'>{}</span>",
-        "today":    "<span color='#8caaee'><b>{}</b></span>"
+        "today":    "<span color='#e78284'><b>{}</b></span>"
       }
     }
   },
@@ -145,7 +145,7 @@
       "dnd-notification": "<span color='#737994'>󰂛</span>",
       "dnd-none": "<span color='#737994'>󰪑</span>",
       "inhibited-notification": "󰂚",
-      "inhibited-none": "󰂜" ,
+      "inhibited-none": "󰂜",
       "dnd-inhibited-notification": "<span color='#737994'>󰂛</span>",
       "dnd-inhibited-none": "<span color='#737994'>󰪑</span>"
     }
