@@ -7,19 +7,34 @@
 (package-refresh-contents)
   ;;
 
-(use-package markdown-mode)
-(use-package flycheck)
-(use-package lsp-ui)
-(use-package lsp-mode)
-(use-package magit)
-(use-package yasnippet)
-(use-package dap-mode)
-(use-package helm)
-(use-package helm-xref)
-(use-package helm-lsp)
-(use-package projectile)
-(use-package which-key)
-(use-package dir-treeview)
+(use-package markdown-mode
+  :ensure t)
+(use-package flycheck
+  :ensure t)
+(use-package lsp-ui
+  :ensure t)
+(use-package lsp-mode
+  :ensure t)
+(use-package magit
+  :ensure t)
+(use-package yasnippet
+  :ensure t)
+(use-package dap-mode
+  :ensure t)
+(use-package helm
+  :ensure t)
+(use-package helm-xref
+  :ensure t)
+(use-package helm-lsp
+  :ensure t)
+(use-package projectile
+  :ensure t)
+(use-package which-key
+  :ensure t)
+(use-package dir-treeview
+  :ensure t)
+(use-package catppuccin-theme
+  :ensure t)
 
 (use-package company
   :ensure t
