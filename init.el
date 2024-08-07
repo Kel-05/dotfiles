@@ -101,7 +101,6 @@
      ("bash" . sh-mode)
      ("rust" . rust-mode)))
  '(markdown-hide-markup t)
- '(menu-bar-mode nil)
  '(package-selected-packages
    '(dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
  '(require-final-newline t)
