@@ -104,7 +104,7 @@
      ("rust" . rust-mode)))
  '(markdown-hide-markup t)
  '(package-selected-packages
-   '(dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
+   '(multiple-cursors dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
  '(require-final-newline t)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -180,7 +180,7 @@
 ;; multiple cursors
 (global-set-key (kbd "C-<") 'mc/mark-next-like-this)
 (global-set-key (kbd "C->") 'mc/mark-previous-like-this)
-(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+(global-set-key (kbd "C-M-<") 'mc/mark-all-like-this)
 ;;
 
 ;; duplicate line
