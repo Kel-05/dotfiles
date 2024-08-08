@@ -7,6 +7,8 @@
 (package-refresh-contents)
   ;;
 
+(use-package multiple-cursors
+  :ensure t)
 (use-package markdown-mode
   :ensure t)
 (use-package flycheck
@@ -166,13 +168,19 @@
 (global-set-key (kbd "<f9>") 'dir-treeview)
 (global-set-key (kbd "C-<tab>") 'other-window)
 
-  ;; keys for navigation
+;; keys for navigation
 (define-key yas-keymap [(tab)]       nil)
 (define-key yas-keymap (kbd "TAB")   nil)
 (define-key yas-keymap [(shift tab)] nil)
 (define-key yas-keymap [backtab]     nil)
 (define-key yas-keymap (kbd "M-RET") 'yas-next-field-or-maybe-expand)
 (define-key yas-keymap (kbd "C-M-<return>") 'yas-prev)
+;;
+
+;; multiple cursors
+(global-set-key (kbd "C-<") 'mc/mark-next-like-this)
+(global-set-key (kbd "C->") 'mc/mark-previous-like-this)
+(global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 ;;
 
 ;; duplicate line
