@@ -1,6 +1,6 @@
 ;; use packages section
   ;; add melpa repository
-(require 'package)
+(use-package package)
 (add-to-list 'package-archives
 	     '("melpa" . "https://melpa.org/packages/") t)
 (package-initialize)
@@ -65,7 +65,7 @@
 
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-  (require 'dap-cpptools)
+  (use-package dap-cpptools)
   (yas-global-mode))
 ;;
 
