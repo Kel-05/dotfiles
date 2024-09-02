@@ -189,7 +189,17 @@
 ;;
 
 ;; duplicate line
-(defun duplicate-line()
+(defun duplicate-up()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (previous-line 1)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+(defun duplicate-down()
   (interactive)
   (move-beginning-of-line 1)
   (kill-line)
@@ -198,5 +208,6 @@
   (next-line 1)
   (yank)
 )
-(global-set-key (kbd "C-c C-d") 'duplicate-line)
+(global-set-key (kbd "M-<up>") 'duplicate-up)
+(global-set-key (kbd "M-<down>") 'duplicate-down)
 ;;
