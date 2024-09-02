@@ -7,12 +7,16 @@
 (package-refresh-contents)
   ;;
 
+(use-package cuda-mode
+  :ensure t)
 (use-package multiple-cursors
   :ensure t)
 (use-package markdown-mode
   :ensure t)
 (use-package flycheck
-  :ensure t)
+  :ensure t
+  :config
+  (add-hook 'after-init-hook #'global-flycheck-mode))
 (use-package lsp-ui
   :ensure t)
 (use-package lsp-mode
@@ -69,6 +73,7 @@
   (yas-global-mode))
 ;;
 
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -104,7 +109,7 @@
      ("rust" . rust-mode)))
  '(markdown-hide-markup t)
  '(package-selected-packages
-   '(multiple-cursors dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
+   '(cuda-mode multiple-cursors dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
  '(require-final-newline t)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -193,5 +198,5 @@
   (next-line 1)
   (yank)
 )
-(global-set-key (kbd "C-d") 'duplicate-line)
+(global-set-key (kbd "C-c C-d") 'duplicate-line)
 ;;
