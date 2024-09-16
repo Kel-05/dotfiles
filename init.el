@@ -1,49 +1,45 @@
 ;; use packages section
-  ;; add melpa repository
-(use-package package)
-(add-to-list 'package-archives
-	     '("melpa" . "https://melpa.org/packages/") t)
+  ;; add repositories
+(require 'package)
+(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
 (package-initialize)
-(package-refresh-contents)
   ;;
 
-(use-package cuda-mode
-  :ensure t)
-(use-package multiple-cursors
-  :ensure t)
-(use-package markdown-mode
-  :ensure t)
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(eval-and-compile
+  (setq use-package-always-ensure t
+	use-package-expand-minimally t))
+
+(use-package cuda-mode)
+(use-package multiple-cursors)
+(use-package markdown-mode)
+(use-package lsp-ui)
+
+(use-package lsp-mode)
+(use-package magit)
+(use-package helm-xref)
+(use-package helm-lsp)
+
+(use-package projectile)
+(use-package which-key)
+(use-package catppuccin-theme)
+
+(use-package lsp-java
+  :config (add-hook 'java-mode-hook 'lsp))
 (use-package flycheck
-  :ensure t
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
-(use-package lsp-ui
-  :ensure t)
-(use-package lsp-mode
-  :ensure t)
-(use-package magit
-  :ensure t)
 (use-package yasnippet
-  :ensure t)
-(use-package dap-mode
-  :ensure t)
-(use-package helm
-  :ensure t)
-(use-package helm-xref
-  :ensure t)
-(use-package helm-lsp
-  :ensure t)
-(use-package projectile
-  :ensure t)
-(use-package which-key
-  :ensure t)
-(use-package dir-treeview
-  :ensure t)
-(use-package catppuccin-theme
-  :ensure t)
+  :config (yas-global-mode))
 
+(use-package dap-mode
+  :after lsp-mode :config (dap-auto-configure-mode))
+(use-package helm
+  :config (helm-mode))
 (use-package company
-  :ensure t
   :config
   (add-to-list 'company-backends 'company-capf)
   (global-company-mode))
@@ -69,8 +65,7 @@
 
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-  (use-package dap-cpptools)
-  (yas-global-mode))
+  (use-package dap-cpptools))
 ;;
 
 
@@ -109,7 +104,7 @@
      ("rust" . rust-mode)))
  '(markdown-hide-markup t)
  '(package-selected-packages
-   '(cuda-mode multiple-cursors dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
+   '(lsp-java cuda-mode multiple-cursors dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
  '(require-final-newline t)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -119,23 +114,6 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(dir-treeview-archive-face ((t (:foreground "#e78284" :inherit dir-treeview-default-filename-face))))
- '(dir-treeview-audio-face ((t (:foreground "#81c8be" :inherit dir-treeview-default-filename-face))))
- '(dir-treeview-control-face ((t (:foreground "#c6d0f5"))) t)
- '(dir-treeview-control-mouse-face ((t (:background "#C1FFC1" :foreground "#232634"))))
- '(dir-treeview-directory-face ((t (:foreground "#8caaee" :inherit dir-treeview-default-filename-face))))
- '(dir-treeview-executable-face ((t (:foreground "#e78284" :inherit dir-treeview-default-filename-face))))
- '(dir-treeview-file-group-face ((t (:foreground "#e78284"))))
- '(dir-treeview-file-mode-face ((t (:foreground "#ca9ee6"))))
- '(dir-treeview-file-owner-face ((t (:foreground "#e78284"))))
- '(dir-treeview-file-size-face ((t (:foreground "#8caaee"))))
- '(dir-treeview-file-time-face ((t (:foreground "#e78284"))))
- '(dir-treeview-highlight-face ((t (:background "#a6d189" :foreground "#232634"))))
- '(dir-treeview-image-face ((t (:foreground "#ca9ee6" :inherit dir-treeview-default-filename-face))))
- '(dir-treeview-label-mouse-face ((t (:background "#C1FFC1" :foreground "#232634"))))
- '(dir-treeview-select-face ((t (:background "#97FFFF" :foreground "#232634"))))
- '(dir-treeview-start-dir-face ((t (:background "#D9D9D9" :foreground "#232634"))))
- '(dir-treeview-video-face ((t (:foreground "#ca9ee6" :inherit dir-treeview-default-filename-face))))
  '(markdown-blockquote-face ((t nil)))
  '(markdown-code-face ((t (:background "#292c3c" :foreground "#c6d0f5"))))
  '(markdown-inline-code-face ((t (:background "#292c3c")))))
@@ -168,9 +146,7 @@
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map (kbd "M-RET") yas-maybe-expand)
-(global-set-key "" 'yas-minor-mode)
 (global-set-key (kbd "C-k") 'kill-whole-line)
-(global-set-key (kbd "<f9>") 'dir-treeview)
 (global-set-key (kbd "C-<tab>") 'other-window)
 
 ;; keys for navigation
