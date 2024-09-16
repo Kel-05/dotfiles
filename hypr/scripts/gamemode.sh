@@ -1,6 +1,6 @@
 #!/bin/bash
 HYPRGAMEMODE=$(hyprctl getoption animations:enabled | awk 'NR==1{print $2}')
-icon=~/.local/share/icons/Catppuccin-Frappe/status/22/dialog-information.svg
+icon=~/.config/hypr/assets/info.svg
 time=3000
 
 if [ "$HYPRGAMEMODE" = 1 ] ; then
