@@ -142,11 +142,26 @@
   (setq interprogram-paste-function 'wl-paste)
 ;;
 
+;; customized c-backspace
+(defun custom/backward-kill-word ()
+  "Remove all whitespace if the character behind the cursor is whitespace, otherwise remove a word."
+  (interactive)
+  (if (looking-back "[ \n]")
+      ;; delete horizontal space before us and then check to see if we
+      ;; are looking at a newline
+      (progn (delete-horizontal-space 't)
+             (while (looking-back "[ \n]")
+               (backward-delete-char 1)))
+      ;; else, just delete the word
+      (backward-kill-word 1)))
+;;
+
 ;; define keymaps
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
 (define-key yas-minor-mode-map (kbd "M-RET") yas-maybe-expand)
 (global-set-key (kbd "C-k") 'kill-whole-line)
+(global-set-key (kbd "<C-backspace>") 'custom/backward-kill-word)
 (global-set-key (kbd "C-<tab>") 'other-window)
 
 ;; keys for navigation
