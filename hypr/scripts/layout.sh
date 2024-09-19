@@ -1,6 +1,6 @@
 #!/bin/bash
 time=3000
-icon=~/.config/hypr/assets/info.svg
+icon=~/.config/hypr/assets/info
 
 if hyprctl getoption general:layout | grep dwindle; then
     hyprctl keyword general:layout master
