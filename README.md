@@ -1,40 +1,39 @@
-# # Warning
-This README is outdated af. I'll update it once I find the time.
+# Welcome to my dotfiles!
+These are the configuration files I use, feel free to use them however you want!
 
-# Descriptions
-If you have trouble navigating this repository, here's a short description of some of the files.
-I would say this list is sorted from most to least important, so do what you want with this information.
+For more information about each file, go to their respective directories.
 
-- hypr/ - Hyprland and hypr* config files + some custom scripts.
-- init.el - Emacs config file
-- kde.kksrc - custom keybinds for KDE.
-- .obsidian/ - config and plugins for Obsidian.
-- fish/ - config and plugins for fish shell.
 
-# Dependencies
-Other than the software I mentioned earlier or that is explicited in the repo files, you're going to need the following in order for the init.el and hypr* config to work properly:
+# init.el (Emacs)
+My Emacs configuration, featuring:
 
-## init.el
-you're going to need the [MELPA](https://melpa.org/#/) package repository in order to install most of these packages.
+- Java, CUDA and C/CPP support
+- Syntax check, highlighting and auto completion.
+- Copy-paste outside of emacs on Wayland (wl-clipboard)
+- Multiple cursors
+- Markdown support
+- Other QoL and IDE-like features
 
-- markdown-mode
-- flycheck
-- lsp-ui
-- lsp-mode
-- magit
-- yasnippet
-- company
-- [catppuccin-theme](https://github.com/catppuccin/emacs)
+## Dependencies
+Outside of [wl-clipboard](https://github.com/bugaevc/wl-clipboard), every package
+declared in the config will be installed on first boot of Emacs. Check your distro
+for the package or install it manually.
 
-Note: change or delete line 34 as it is a system-specific configuration.
+## Custom keymaps
+command        |keymap|description
+--------------:|:----:|:--------------------------------------------------------
+mark-previous  |C->   |create a cursor on the previous instance of a marked word
+mark-next      |C-<   |create a cursor on the next instance of a marked word
+mark-all       |C-M-< |create a cursor on all instances of a marked word
+duplicate-up   |M-up  |duplicate line upwards
+duplicate-down |M-down|duplicate line downwards
+yas-expand     |M-RET |expand snippet
+kill-whole-line|C-k   |cut whole line
+other-window   |C-tab |tab to other Emacs window
 
-## hypr*
-you'll need the following software if you want to use the config as it is:
 
-- grimblast - used for the screenshot binds
-- wlogout - executed whenever `CTRL ALT DEL` is pressed, is a cool logout screen for wlroots compositors
-- qt6ct - used to change the look fo qt-based apps (color scheme: [catppuccin-frappe](https://github.com/catppuccin/qt5ct), you can also use it for qt6ct)
-- [Catppuccin-Frappe-Blue-Cursors](https://github.com/catppuccin/cursors) - The cursor I use.
-- [Catppuccin-Frappe-Standard-Blue-Dark](https://github.com/catppuccin/gtk) - GTK theme I use.
-- Catppuccin-Frappe and Tela-circle-blue-dark icons - used for some of the scripts.
-- konsole, firefox, dolphin, wofi, obsidian, betterbird, emacs, hyprpicker - software i use and have keybinds set for it.
+# Other
+- grub - [catppuccin themed](https://github.com/catppuccin/grub) grub configuration
+file. It also customizes the [tty](https://github.com/catppuccin/tty).
+- kde.kksrc - My KDE Plasma 6 keybinds
+- user.js - [betterfox](https://github.com/yokoffing/Betterfox)

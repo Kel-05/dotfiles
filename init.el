@@ -170,7 +170,7 @@
 (define-key yas-keymap [(shift tab)] nil)
 (define-key yas-keymap [backtab]     nil)
 (define-key yas-keymap (kbd "M-RET") 'yas-next-field-or-maybe-expand)
-(define-key yas-keymap (kbd "C-M-<return>") 'yas-prev)
+(define-key yas-keymap (kbd "C-M-RET") 'yas-prev)
 ;;
 
 ;; multiple cursors
