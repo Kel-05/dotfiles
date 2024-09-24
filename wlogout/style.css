@@ -1,11 +1,11 @@
 @import "frappe.css";
 * {
-	background-image: none;
-	box-shadow: none;
+    background-image: none;
+    box-shadow: none;
 }
 
 window {
-	background-color: rgba(0, 0, 0, 0.2);
+    background-color: rgba(0, 0, 0, 0.2);
 }
 
 button {
@@ -47,6 +47,6 @@ button:active, button:hover {
 }
 
 #arch {
-    background-image: image(url("/home/mario/Pictures/Icons/arch.png"), url("/home/mario/Pictures/Icons/arch.png"));
+    background-image: image(url("/home/USER/hypr/assets/arch.png"), url("/home/USER/hypr/assets/arch.png"));
     background-size: 150px;
 }
