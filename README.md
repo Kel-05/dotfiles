@@ -21,7 +21,7 @@ for the package or install it manually.
 
 ## Custom key bind
 Command        |Key bind|Effect
---------------:|:------:|:--------------------------------------------------------
+:--------------|:------:|:--------------------------------------------------------
 mark-previous  |C->     |Create a cursor on the previous instance of a marked word
 mark-next      |C-<     |Create a cursor on the next instance of a marked word
 mark-all       |C-M-<   |Create a cursor on all instances of a marked word

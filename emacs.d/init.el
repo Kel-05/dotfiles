@@ -1,17 +1,27 @@
 ;; use packages section
-  ;; add repositories
-(require 'package)
-(add-to-list 'package-archives '("gnu"   . "https://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/"))
-(package-initialize)
+  ;; straight bootstrap
+(defvar bootstrap-version)
+(let ((bootstrap-file
+       (expand-file-name
+        "straight/repos/straight.el/bootstrap.el"
+        (or (bound-and-true-p straight-base-dir)
+            user-emacs-directory)))
+      (bootstrap-version 7))
+  (unless (file-exists-p bootstrap-file)
+    (with-current-buffer
+        (url-retrieve-synchronously
+         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
+         'silent 'inhibit-cookies)
+      (goto-char (point-max))
+      (eval-print-last-sexp)))
+  (load bootstrap-file nil 'nomessage))
   ;;
 
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
+(straight-use-package 'use-package)
+
 (eval-and-compile
   (setq use-package-always-ensure t
-	use-package-expand-minimally t))
+  straight-use-package-by-default t))
 
 (use-package cuda-mode)
 (use-package multiple-cursors)
@@ -26,6 +36,7 @@
 (use-package projectile)
 (use-package which-key)
 (use-package catppuccin-theme)
+(use-package yasnippet-snippets)
 
 (use-package lsp-java
   :config (add-hook 'java-mode-hook 'lsp))
@@ -34,6 +45,10 @@
   (add-hook 'after-init-hook #'global-flycheck-mode))
 (use-package yasnippet
   :config (yas-global-mode))
+(use-package copilot
+  :straight (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
+  :config (copilot-install-server)
+  :config (add-hook 'prog-mode-hook 'copilot-mode))
 
 (use-package dap-mode
   :after lsp-mode :config (dap-auto-configure-mode))
@@ -43,6 +58,8 @@
   :config
   (add-to-list 'company-backends 'company-capf)
   (global-company-mode))
+(use-package company-box
+  :hook (company-mode . company-box-mode))
 ;;
 
 
@@ -64,8 +81,7 @@
       lsp-idle-delay 0.1)  ;; clangd is fast
 
 (with-eval-after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
-  (use-package dap-cpptools))
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
 ;;
 
 
@@ -103,8 +119,6 @@
      ("bash" . sh-mode)
      ("rust" . rust-mode)))
  '(markdown-hide-markup t)
- '(package-selected-packages
-   '(lsp-java cuda-mode multiple-cursors dir-treeview which-key projectile helm-lsp helm-xref helm dap-mode yasnippet-snippets company yasnippet magit lsp-ui lsp-mode flycheck markdown-mode catppuccin-theme ##))
  '(require-final-newline t)
  '(save-place-mode t)
  '(scroll-bar-mode nil)
@@ -118,12 +132,14 @@
  '(markdown-code-face ((t (:background "#292c3c" :foreground "#c6d0f5"))))
  '(markdown-inline-code-face ((t (:background "#292c3c")))))
 
+
 ;; Catppuccin theme
 (load-theme 'catppuccin :no-confirm)
 (setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
 (catppuccin-reload)
 (set-face-attribute 'default nil :height 100)
 ;;
+
 
 ;; wlcopy - credit: yorickvP on Github
 (setq wl-copy-process nil)
@@ -142,6 +158,7 @@
   (setq interprogram-paste-function 'wl-paste)
 ;;
 
+
 ;; customized c-backspace
 (defun custom/backward-kill-word ()
   "Remove all whitespace if the character behind the cursor is whitespace, otherwise remove a word."
@@ -156,6 +173,7 @@
       (backward-kill-word 1)))
 ;;
 
+
 ;; define keymaps
 (define-key yas-minor-mode-map (kbd "<tab>") nil)
 (define-key yas-minor-mode-map (kbd "TAB") nil)
@@ -163,23 +181,25 @@
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "<C-backspace>") 'custom/backward-kill-word)
 (global-set-key (kbd "C-<tab>") 'other-window)
+(define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
+(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
-;; keys for navigation
+  ;; yasnippet keymaps
 (define-key yas-keymap [(tab)]       nil)
 (define-key yas-keymap (kbd "TAB")   nil)
 (define-key yas-keymap [(shift tab)] nil)
 (define-key yas-keymap [backtab]     nil)
 (define-key yas-keymap (kbd "M-RET") 'yas-next-field-or-maybe-expand)
 (define-key yas-keymap (kbd "C-M-RET") 'yas-prev)
-;;
+  ;;
 
-;; multiple cursors
+  ;; multiple cursors
 (global-set-key (kbd "C-<") 'mc/mark-next-like-this)
 (global-set-key (kbd "C->") 'mc/mark-previous-like-this)
 (global-set-key (kbd "C-M-<") 'mc/mark-all-like-this)
-;;
+  ;;
 
-;; duplicate line
+  ;; duplicate line
 (defun duplicate-up()
   (interactive)
   (move-beginning-of-line 1)
@@ -201,4 +221,5 @@
 )
 (global-set-key (kbd "M-<up>") 'duplicate-up)
 (global-set-key (kbd "M-<down>") 'duplicate-down)
+  ;;
 ;;
