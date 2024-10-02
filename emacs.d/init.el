@@ -38,8 +38,7 @@
 (use-package catppuccin-theme)
 (use-package yasnippet-snippets)
 
-(use-package lsp-java
-  :config (add-hook 'java-mode-hook 'lsp))
+(use-package lsp-java)
 (use-package flycheck
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
@@ -63,15 +62,12 @@
 ;;
 
 
-;; C/CPP IDE
+;; IDE
 (helm-mode)
 (define-key global-map [remap find-file] #'helm-find-files)
 (define-key global-map [remap execute-extended-command] #'helm-M-x)
 (define-key global-map [remap switch-to-buffer] #'helm-mini)
-
 (which-key-mode)
-(add-hook 'c-mode-hook 'lsp)
-(add-hook 'c++-mode-hook 'lsp)
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
@@ -84,6 +80,18 @@
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
 ;;
 
+
+;; lsp hooks
+(add-hook 'c-mode-hook 'lsp)
+(add-hook 'c++-mode-hook 'lsp)
+(add-hook 'cuda-mode-hook 'lsp)
+(add-hook 'sh-mode-hook 'lsp)
+(add-hook 'python-mode-hook 'lsp)
+(add-hook 'java-mode-hook 'lsp)
+(add-hook 'html-mode-hook 'lsp)
+(add-hook 'css-mode-hook 'lsp)
+(add-hook 'js-mode-hook 'lsp)
+;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
