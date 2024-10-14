@@ -19,9 +19,8 @@
 
 (straight-use-package 'use-package)
 
-(eval-and-compile
-  (setq use-package-always-ensure t
-  straight-use-package-by-default t))
+(setq straight-use-package-by-default t
+      warning-minimum-level :error)
 
 (use-package cuda-mode)
 (use-package multiple-cursors)
