@@ -38,6 +38,8 @@
 (use-package yasnippet-snippets)
 
 (use-package lsp-java)
+(use-package typescript-mode)
+
 (use-package flycheck
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
@@ -76,7 +78,8 @@
       lsp-idle-delay 0.1)  ;; clangd is fast
 
 (with-eval-after-load 'lsp-mode
-  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration))
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
+  (require 'dap-cpptools))
 ;;
 
 
@@ -90,6 +93,7 @@
 (add-hook 'html-mode-hook 'lsp)
 (add-hook 'css-mode-hook 'lsp)
 (add-hook 'js-mode-hook 'lsp)
+(add-hook 'typescript-mode-hook 'lsp)
 ;;
 
 (custom-set-variables
@@ -188,8 +192,8 @@
 (global-set-key (kbd "C-k") 'kill-whole-line)
 (global-set-key (kbd "<C-backspace>") 'custom/backward-kill-word)
 (global-set-key (kbd "C-<tab>") 'other-window)
+(global-set-key (kbd "<f9>") 'treemacs)
 (define-key copilot-completion-map (kbd "<tab>") 'copilot-accept-completion)
-(define-key copilot-completion-map (kbd "TAB") 'copilot-accept-completion)
 
   ;; yasnippet keymaps
 (define-key yas-keymap [(tab)]       nil)
