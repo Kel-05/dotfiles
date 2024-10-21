@@ -40,6 +40,8 @@
 (use-package lsp-java)
 (use-package typescript-mode)
 
+(use-package lsp-pyright
+  :custom (lsp-pyright-langserver-command "pyright")) ;; or basedpyright
 (use-package flycheck
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
