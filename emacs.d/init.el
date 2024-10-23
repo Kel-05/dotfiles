@@ -67,36 +67,33 @@
 
 ;; IDE
 (helm-mode)
+(which-key-mode)
+
 (define-key global-map [remap find-file] #'helm-find-files)
 (define-key global-map [remap execute-extended-command] #'helm-M-x)
 (define-key global-map [remap switch-to-buffer] #'helm-mini)
-(which-key-mode)
+
+(defun fill-column-80 ()
+  (interactive)
+  (set-fill-column 80)
+  (display-fill-column-indicator-mode)
+)
+
+(add-hook 'prog-mode-hook 'lsp)
+(add-hook 'prog-mode-hook 'fill-column-80)
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
       treemacs-space-between-root-nodes nil
       company-idle-delay 0.0
       company-minimum-prefix-length 1
-      lsp-idle-delay 0.1)  ;; clangd is fast
+      lsp-idle-delay 0.1) ;; clangd is fast
 
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools))
 ;;
 
-
-;; lsp hooks
-(add-hook 'c-mode-hook 'lsp)
-(add-hook 'c++-mode-hook 'lsp)
-(add-hook 'cuda-mode-hook 'lsp)
-(add-hook 'sh-mode-hook 'lsp)
-(add-hook 'python-mode-hook 'lsp)
-(add-hook 'java-mode-hook 'lsp)
-(add-hook 'html-mode-hook 'lsp)
-(add-hook 'css-mode-hook 'lsp)
-(add-hook 'js-mode-hook 'lsp)
-(add-hook 'typescript-mode-hook 'lsp)
-;;
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
