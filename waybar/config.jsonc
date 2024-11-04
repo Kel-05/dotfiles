@@ -110,6 +110,7 @@
     "format-bluetooth": "{volume}% {icon}<span color='#8caaee'></span> {format_source}",
     "format-bluetooth-muted": "<span color='#737994'></span> {icon}<span color='#8caaee'></span> {format_source}",
     "on-click": "pavucontrol-qt",
+    "on-click-middle": "swayosd-client --output-volume mute-toggle",
     "format-muted": "<span color='#737994'></span> {format_source}",
     "format-source": "{volume}% ",
     "format-source-muted": "<span color='#737994'></span>",
