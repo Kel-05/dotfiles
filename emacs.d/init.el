@@ -22,6 +22,7 @@
 (setq straight-use-package-by-default t
       warning-minimum-level :error)
 
+
 (use-package cuda-mode)
 (use-package multiple-cursors)
 (use-package markdown-mode)
@@ -39,18 +40,37 @@
 
 (use-package lsp-java)
 (use-package typescript-mode)
+(use-package yaml-mode)
+
+(use-package rust-mode
+  :config
+  (add-hook 'rust-mode-hook (lambda () (setq indent-tabs-mode nil)))
+  :config
+  (add-hook 'rust-mode-hook 'cargo-minor-mode)
+  :config
+  (setq rust-format-on-save t))
+(use-package rustic
+  :config
+  (setq rustic-format-on-save nil)
+  :custom
+  (rustic-cargo-use-last-stored-arguments t))
+(use-package cargo-mode
+  :config
+  (setq compilation-scroll-output t))
 
 (use-package lsp-pyright
   :custom (lsp-pyright-langserver-command "pyright")) ;; or basedpyright
 (use-package flycheck
-  :config
-  (add-hook 'after-init-hook #'global-flycheck-mode))
+  :config (add-hook 'after-init-hook #'global-flycheck-mode))
 (use-package yasnippet
   :config (yas-global-mode))
 (use-package copilot
-  :straight (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
-  :config (copilot-install-server)
-  :config (add-hook 'prog-mode-hook 'copilot-mode))
+  :straight
+  (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
+  :config
+  (copilot-install-server)
+  :config
+  (add-hook 'prog-mode-hook 'copilot-mode))
 
 (use-package dap-mode
   :after lsp-mode :config (dap-auto-configure-mode))
