@@ -35,5 +35,3 @@ other-window   |C-tab   |Tab to other Emacs window
 # Other
 - grub - [Catppuccin-themed](https://github.com/catppuccin/grub) GRUB configuration
 file. It also customizes the [TTY](https://github.com/catppuccin/tty)
-- kde.kksrc - My KDE Plasma 6 keybinds (not maintained)
-- user.js - [BetterFox](https://github.com/yokoffing/Betterfox)
