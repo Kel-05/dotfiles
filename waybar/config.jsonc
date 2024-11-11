@@ -17,6 +17,7 @@
   ],
   "modules-right": [
     "tray",
+    "custom/switch",
     "pulseaudio",
     "group/connections",
     "group/power",
@@ -160,6 +161,11 @@
     "on-click-right": "playerctl stop",
     "on-scroll-up": "playerctl next",
     "on-scroll-down": "playerctl previous",
+},
+  "custom/switch": {
+    "tooltip": false,
+    "format": "",
+    "on-click": "bash ~/.config/hypr/scripts/light-switch.sh",
 },
   "group/power": {
     "orientation": "inherit",

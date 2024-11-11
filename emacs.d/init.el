@@ -125,7 +125,7 @@
  '(cua-mode t)
  '(cursor-type 'bar)
  '(custom-safe-themes
-   '("b23f3067e27a9940a563f1fb3bf455aabd0450cb02c3fa4ad43f75a583311216" default))
+   '("8ccbbbf5c197f80c9dce116408a248fde1ac4fedd9b5b7883e729eba83c9c64e" "b23f3067e27a9940a563f1fb3bf455aabd0450cb02c3fa4ad43f75a583311216" default))
  '(dir-treeview-show-in-side-window t)
  '(display-line-numbers t)
  '(electric-pair-mode t)
@@ -158,18 +158,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(markdown-blockquote-face ((t nil)))
- '(markdown-code-face ((t (:background "#292c3c" :foreground "#c6d0f5"))))
- '(markdown-inline-code-face ((t (:background "#292c3c")))))
+ )
 
-
-;; Catppuccin theme
-(load-theme 'catppuccin :no-confirm)
-(setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
-(catppuccin-reload)
-(set-face-attribute 'default nil :height 100)
-;;
-
+(load-file "~/.emacs.d/theme.el")
 
 ;; wlcopy - credit: yorickvP on Github
 (setq wl-copy-process nil)
