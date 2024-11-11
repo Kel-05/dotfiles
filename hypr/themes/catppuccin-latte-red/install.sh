@@ -32,6 +32,7 @@ cp $theme/wallpaper              $hyprland/assets/wallpaper
 gsettings set org.gnome.desktop.interface gtk-theme       catppuccin-latte-red-standard+default
 gsettings set org.gnome.desktop.interface cursor-theme    catppuccin-latte-red-cursors
 gsettings set org.gnome.desktop.interface icon-theme      Tela-circle-red-light
+gsettings set org.gnome.desktop.interface color-scheme    prefer-light
 
 swaync-client -rs
 pkill waybar

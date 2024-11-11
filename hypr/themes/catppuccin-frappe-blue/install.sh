@@ -32,6 +32,7 @@ cp $theme/wallpaper              $hyprland/assets/wallpaper
 gsettings set org.gnome.desktop.interface gtk-theme       catppuccin-frappe-blue-standard+default
 gsettings set org.gnome.desktop.interface cursor-theme    catppuccin-frappe-blue-cursors
 gsettings set org.gnome.desktop.interface icon-theme      Tela-circle-blue-dark
+gsettings set org.gnome.desktop.interface color-scheme    prefer-dark
 
 swaync-client -rs
 pkill waybar
