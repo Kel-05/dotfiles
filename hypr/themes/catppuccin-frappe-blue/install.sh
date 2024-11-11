@@ -10,6 +10,7 @@ micro="$HOME/.config/micro"
 swaync="$HOME/.config/swaync"
 gitui="$HOME/.config/gitui"
 kitty="$HOME/.config/kitty"
+icons_index="$HOME/.local/share/icons/default/index.theme"
 
 fish -c "set -Ux HYPRLAND_THEME ${theme##*/}"
 
@@ -21,6 +22,7 @@ emacsclient --eval "(catppuccin-load-flavor 'frappe)"
 
 cp $theme/gtk-3.0-settings.ini $gtk3/settings.ini
 cp $theme/gtk-4.0-settings.ini $gtk4/settings.ini
+cp $theme/icons-index.theme $icons_index
 
 gsettings set org.gnome.desktop.interface gtk-theme \'catppuccin-frappe-blue-standard+default\'
 gsettings set org.gnome.desktop.interface cursor-theme \'catppuccin-frappe-blue-cursors\'
