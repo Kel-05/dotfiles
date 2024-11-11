@@ -29,9 +29,9 @@ cp $theme/kitty-bg.conf          $kitty/kitty-bg.conf
 cp $theme/micro-settings.json    $micro/settings.json
 cp $theme/wallpaper              $hyprland/assets/wallpaper
 
-gsettings set org.gnome.desktop.interface gtk-theme       \'catppuccin-latte-red-standard+default\'
-gsettings set org.gnome.desktop.interface cursor-theme    \'catppuccin-latte-red-cursors\'
-gsettings set org.gnome.desktop.interface icon-theme      \'Tela-circle-red-light\'
+gsettings set org.gnome.desktop.interface gtk-theme       catppuccin-latte-red-standard+default
+gsettings set org.gnome.desktop.interface cursor-theme    catppuccin-latte-red-cursors
+gsettings set org.gnome.desktop.interface icon-theme      Tela-circle-red-light
 
 swaync-client -rs
 pkill waybar
