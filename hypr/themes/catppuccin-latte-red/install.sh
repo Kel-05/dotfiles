@@ -9,6 +9,7 @@ konsole="$HOME/.local/share/konsole"
 micro="$HOME/.config/micro"
 swaync="$HOME/.config/swaync"
 gitui="$HOME/.config/gitui"
+kitty="$HOME/.config/kitty"
 
 fish -c "set -Ux HYPRLAND_THEME ${theme##*/}"
 
@@ -36,6 +37,7 @@ plasma-apply-colorscheme CatppuccinLatteRed
 
 cp $theme/konsole.colorscheme $konsole/konsole.colorscheme
 cp $theme/gitui-theme.ron $gitui/theme.ron
+cp $theme/kitty-bg.conf $kitty/kitty-bg.conf
 
 fish -c "yes | fish_config theme save \"Catppuccin Latte\""
 
