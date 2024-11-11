@@ -8,6 +8,7 @@ waybar="$HOME/.config/waybar"
 konsole="$HOME/.local/share/konsole"
 micro="$HOME/.config/micro"
 swaync="$HOME/.config/swaync"
+gitui="$HOME/.config/gitui"
 
 fish -c "set -Ux HYPRLAND_THEME ${theme##*/}"
 
@@ -30,11 +31,11 @@ waybar &
 plasma-apply-colorscheme CatppuccinFrappeBlue
 
 cp $theme/konsole.colorscheme $konsole/konsole.colorscheme
+cp $theme/gitui-theme.ron $gitui/theme.ron
 
 fish -c "yes | fish_config theme save \"Catppuccin Frappe\""
 
 cp $theme/micro-settings.json $micro/settings.json
-
 cp $theme/wallpaper $hyprland/assets/wallpaper
 
 if ! echo catppuccin-frappe-blue | grep $(hyprctl hyprpaper listloaded) > /dev/null; then
