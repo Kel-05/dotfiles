@@ -20,8 +20,12 @@ emacsclient --eval "(catppuccin-load-flavor 'frappe)"
 
 cp $theme/gtk-3.0-settings.ini $gtk3/settings.ini
 cp $theme/gtk-4.0-settings.ini $gtk4/settings.ini
-cp $theme/colorscheme.css $waybar/colorscheme.css
 
+gsettings set org.gnome.desktop.interface gtk-theme \'catppuccin-frappe-blue-standard+default\'
+gsettings set org.gnome.desktop.interface cursor-theme \'catppuccin-frappe-blue-cursors\'
+gsettings set org.gnome.desktop.interface icon-theme \'Tela-circle-blue-dark\'
+
+cp $theme/colorscheme.css $waybar/colorscheme.css
 cp $theme/swaync-style.css $swaync/style.css
 swaync-client -rs
 
