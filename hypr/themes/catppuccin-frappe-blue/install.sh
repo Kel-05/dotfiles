@@ -18,7 +18,7 @@ emacsclient --eval "(load-theme 'catppuccin :no-confirm)"
 emacsclient --eval "(catppuccin-load-flavor 'frappe)"
 
 cp $theme/gtk-3.0-settings.ini $gtk3/settings.ini
-cp $theme/gtk-4.0-settings.ini $gtk3/settings.ini
+cp $theme/gtk-4.0-settings.ini $gtk4/settings.ini
 cp $theme/colorscheme.css $waybar/colorscheme.css
 
 cp $theme/swaync-style.css $swaync/style.css
