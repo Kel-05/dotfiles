@@ -33,7 +33,7 @@
     "on-scroll-down": "hyprctl dispatch workspace r-1",
     "format": "<big>{icon}</big>",
     "format-icons": {
-      "urgent": "<span color='#e5c890'></span>",
+      "urgent": "<span color='#df8e1d'></span>",
       "active": "",
       "empty": "",
       "default": ""
@@ -47,7 +47,7 @@
     "format": "{icon}",
     "format-icons": {
       "activated": "",
-      "deactivated": "<span color='#737994'></span>"
+      "deactivated": "<span color='#9ca0b0'></span>"
     }
   },
   "tray": {
@@ -64,9 +64,9 @@
       "mode": "month",
       "format": {
         "months":   "<span color='#8caaee'>{}</span>",
-        "days":     "<span color='#c6d0f5'>{}</span>",
-        "weekdays": "<span color='#737994'>{}</span>",
-        "today":    "<span color='#e78284'><b>{}</b></span>"
+        "days":     "<span color='#eff1f5'>{}</span>",
+        "weekdays": "<span color='#9ca0b0'>{}</span>",
+        "today":    "<span color='#d20f39'><b>{}</b></span>"
       }
     }
   },
@@ -78,10 +78,10 @@
   "battery": {
     "format": "{capacity}% <big>{icon}</big>",
     "format-alt": "{time} <big>{icon}</big>",
-    "format-charging": "{capacity}% <span color='#a6d189'></span>",
+    "format-charging": "{capacity}% <span color='#40a02b'></span>",
     "format-plugged": "{capacity}% ",
-    "format-full": "{capacity}% <span color='#a6d189'><big>󱟢</big></span>",
-    "format-critical": "{capacity}% <span color='#e78284'><big>󱃍</big></span>",
+    "format-full": "{capacity}% <span color='#40a02b'><big>󱟢</big></span>",
+    "format-critical": "{capacity}% <span color='#d20f39'><big>󱃍</big></span>",
     "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "states": {
       "critical": 5
@@ -92,29 +92,29 @@
     "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
     "tooltip": true,
     "format-icons": {
-      "default": "<span color='##e78284'></span>",
-      "performance": "<span color='#e78284'></span>",
-      "balanced": "<span color='#8caaee'></span>",
-      "power-saver": "<span color='#a6d189'></span>"
+      "default": "<span color='#d20f39'></span>",
+      "performance": "<span color='#d20f39'></span>",
+      "balanced": "<span color='#1e66f5'></span>",
+      "power-saver": "<span color='#40a02b'></span>"
     }
   },
   "network": {
-    "format-wifi": "{signalStrength}% <span color='#8caaee'><big></big></span>",
+    "format-wifi": "{signalStrength}% <span color='#1e66f5'><big></big></span>",
     "format-ethernet": "<big></big>",
     "tooltip-format": "Connected to <span color='#8caaee'>{essid}</span>",
     "format-linked": "<big></big>",
-    "format-disconnected": "<span color='#e78284'><big>⚠</big></span>",
+    "format-disconnected": "<span color='#d20f39'><big>⚠</big></span>",
     "format-alt": "{ifname}: {ipaddr}/{cidr}"
   },
   "pulseaudio": {
     "format": "{volume}% {icon} {format_source}",
-    "format-bluetooth": "{volume}% {icon}<span color='#8caaee'></span> {format_source}",
-    "format-bluetooth-muted": "<span color='#737994'></span> {icon}<span color='#8caaee'></span> {format_source}",
+    "format-bluetooth": "{volume}% {icon}<span color='#1e66f5'></span> {format_source}",
+    "format-bluetooth-muted": "<span color='#9ca0b0'></span> {icon}<span color='#1e66f5'></span> {format_source}",
     "on-click": "pavucontrol-qt",
     "on-click-middle": "swayosd-client --output-volume mute-toggle",
-    "format-muted": "<span color='#737994'></span> {format_source}",
+    "format-muted": "<span color='#9ca0b0'></span> {format_source}",
     "format-source": "{volume}% ",
-    "format-source-muted": "<span color='#737994'></span>",
+    "format-source-muted": "<span color='#9ca0b0'></span>",
     "format-icons": {
       "headphone": "",
       "hands-free": "",
@@ -127,8 +127,8 @@
   },
   "bluetooth": {
     "on-click": "overskride",
-    "format": "{status} <span color='#8caaee'><big></big></span>",
-    "format-connected": "{device_alias} <span color='#8caaee'><big></big></span>",
+    "format": "{status} <span color='#1e66f5'><big></big></span>",
+    "format-connected": "{device_alias} <span color='#1e66f5'><big></big></span>",
     "tooltip-format": "{controller_alias}\t{controller_address}",
     "tooltip-format-connected": "{controller_alias}\t{controller_address}\n{device_enumerate}",
     "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
@@ -144,12 +144,12 @@
     "format-icons": {
       "notification": "󰂚",
       "none": "󰂜",
-      "dnd-notification": "<span color='#737994'>󰂛</span>",
-      "dnd-none": "<span color='#737994'>󰪑</span>",
+      "dnd-notification": "<span color='#9ca0b0'>󰂛</span>",
+      "dnd-none": "<span color='#9ca0b0'>󰪑</span>",
       "inhibited-notification": "󰂚",
       "inhibited-none": "󰂜",
-      "dnd-inhibited-notification": "<span color='#737994'>󰂛</span>",
-      "dnd-inhibited-none": "<span color='#737994'>󰪑</span>"
+      "dnd-inhibited-notification": "<span color='#9ca0b0'>󰂛</span>",
+      "dnd-inhibited-none": "<span color='#9ca0b0'>󰪑</span>"
     }
   },
   "custom/media": {
