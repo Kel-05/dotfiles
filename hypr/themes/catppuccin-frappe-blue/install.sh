@@ -30,6 +30,7 @@ cp $theme/micro-settings.json    $micro/settings.json
 cp $theme/wallpaper              $hyprland/assets/wallpaper
 
 cp $theme/waybar-config.jsonc    $waybar/config.jsonc
+cp $theme/set-hyprcursor.sh      $hyprland/scripts/exec-once.d/set-hyprcursor.sh
 
 gsettings set org.gnome.desktop.interface gtk-theme       catppuccin-frappe-blue-standard+default
 gsettings set org.gnome.desktop.interface cursor-theme    catppuccin-frappe-blue-cursors
@@ -41,6 +42,7 @@ pkill waybar
 waybar &
 
 plasma-apply-colorscheme CatppuccinFrappeBlue
+hyprctl setcursor catppuccin-frappe-blue-cursors 18
 fish -c "yes | fish_config theme save \"Catppuccin Frappe\""
 
 if ! echo catppuccin-frappe-blue | grep $(hyprctl hyprpaper listloaded) > /dev/null; then

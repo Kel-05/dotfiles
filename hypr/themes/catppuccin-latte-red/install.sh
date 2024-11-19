@@ -30,6 +30,7 @@ cp $theme/micro-settings.json    $micro/settings.json
 cp $theme/wallpaper              $hyprland/assets/wallpaper
 
 cp $theme/waybar-config.jsonc    $waybar/config.jsonc
+cp $theme/set-hyprcursor.sh      $hyprland/scripts/exec-once.d/set-hyprcursor.sh
 
 gsettings set org.gnome.desktop.interface gtk-theme       catppuccin-latte-red-standard+default
 gsettings set org.gnome.desktop.interface cursor-theme    catppuccin-latte-red-cursors
@@ -41,6 +42,7 @@ pkill waybar
 waybar &
 
 plasma-apply-colorscheme CatppuccinLatteRed
+hyprctl setcursor catppuccin-latte-red-cursors 18
 fish -c "yes | fish_config theme save \"Catppuccin Latte\""
 
 if ! echo catppuccin-latte-red | grep $(hyprctl hyprpaper listloaded) > /dev/null; then
