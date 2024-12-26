@@ -101,8 +101,11 @@
   (display-fill-column-indicator-mode)
 )
 
-(add-hook 'prog-mode-hook 'lsp)
-(add-hook 'prog-mode-hook 'fill-column-80)
+(add-hook 'prog-mode-hook       'lsp)
+(add-hook 'prog-mode-hook       'hl-line-mode)
+(add-hook 'prog-mode-hook       'fill-column-80)
+(add-hook 'prog-mode-hook       'display-line-numbers-mode)
+(add-hook 'helm-major-mode-hook 'display-line-numbers-mode)
 
 (setq gc-cons-threshold (* 100 1024 1024)
       read-process-output-max (* 1024 1024)
@@ -129,11 +132,9 @@
  '(custom-safe-themes
    '("8ccbbbf5c197f80c9dce116408a248fde1ac4fedd9b5b7883e729eba83c9c64e" "b23f3067e27a9940a563f1fb3bf455aabd0450cb02c3fa4ad43f75a583311216" default))
  '(dir-treeview-show-in-side-window t)
- '(display-line-numbers t)
  '(electric-pair-mode t)
  '(font-use-system-font t)
  '(fringe-mode 0 nil (fringe))
- '(global-display-line-numbers-mode t)
  '(make-backup-files nil)
  '(markdown-code-lang-modes
    '(("ocaml" . tuareg-mode)
