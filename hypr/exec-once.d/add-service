@@ -1,0 +1,7 @@
+#!/bin/bash
+
+dir=~/.config/hypr/exec-once.d
+service_dir=~/.config/hypr/scripts/exec-once.d
+service=$1.sh
+
+ln -s $service_dir/$service $dir/$service
