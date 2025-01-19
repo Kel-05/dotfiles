@@ -45,11 +45,14 @@ plasma-apply-colorscheme CatppuccinLatteRed
 hyprctl setcursor catppuccin-latte-red-cursors 18
 fish -c "yes | fish_config theme save \"Catppuccin Latte\""
 
-if ! echo catppuccin-latte-red | grep $(hyprctl hyprpaper listloaded) > /dev/null; then
-    hyprctl hyprpaper preload $theme/wallpaper
+if pgrep hyprpaper; then
+    if ! echo catppuccin-latte-red | grep $(hyprctl hyprpaper listloaded) > /dev/null; then
+	hyprctl hyprpaper preload $theme/wallpaper
+    fi
+    hyprctl hyprpaper wallpaper , $theme/wallpaper
+elif pgrep swww; then
+    swww img -t any $theme/wallpaper
 fi
-
-hyprctl hyprpaper wallpaper , $theme/wallpaper
 
 emacsclient --eval "(load-theme 'catppuccin :no-confirm)"
 emacsclient --eval "(catppuccin-load-flavor 'latte)"
