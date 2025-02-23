@@ -23,7 +23,6 @@
       warning-minimum-level :error)
 
 
-(use-package cuda-mode)
 (use-package multiple-cursors)
 (use-package markdown-mode)
 (use-package lsp-ui)
