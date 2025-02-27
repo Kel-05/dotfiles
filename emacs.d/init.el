@@ -69,8 +69,6 @@
   :straight
   (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
   :config
-  (copilot-install-server)
-  :config
   (add-hook 'prog-mode-hook 'copilot-mode))
 
 (use-package dap-mode
