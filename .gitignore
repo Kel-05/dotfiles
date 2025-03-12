@@ -2,3 +2,5 @@ hypr/exec-once.d/*.sh
 fish/fish_variables
 rofi/config.rasi
 cava/shaders
+hypr/monitors.conf
+hypr/workspaces.conf
