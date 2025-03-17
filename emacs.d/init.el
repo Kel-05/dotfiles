@@ -26,6 +26,7 @@
 (use-package multiple-cursors)
 (use-package markdown-mode)
 (use-package lsp-ui)
+(use-package evil)
 
 (use-package lsp-mode)
 (use-package magit)
@@ -87,6 +88,7 @@
 
 ;; IDE
 (helm-mode)
+(evil-mode 1)
 (which-key-mode)
 
 (define-key global-map [remap find-file] #'helm-find-files)
