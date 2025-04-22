@@ -28,6 +28,7 @@
 (use-package lsp-ui)
 (use-package evil)
 
+(use-package cmake-mode)
 (use-package lsp-mode)
 (use-package magit)
 (use-package helm-xref)
