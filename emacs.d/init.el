@@ -88,7 +88,6 @@
 
 ;; IDE
 (helm-mode)
-(evil-mode 1)
 (which-key-mode)
 
 (define-key global-map [remap find-file] #'helm-find-files)
