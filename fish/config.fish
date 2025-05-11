@@ -4,5 +4,7 @@ if status is-interactive
     set -g man_bold -o 8caaee
     set -g man_standout -b c6d0f5 303446
     fish_add_path ~/.local/bin
-    fish_add_path ~/.dotnet/tools
+    set -Ux DOTNET_ROOT $HOME/.dotnet
+    fish_add_path $DOTNET_ROOT
+    fish_add_path $DOTNET_ROOT/tools
 end
