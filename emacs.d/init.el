@@ -135,6 +135,7 @@
  '(electric-pair-mode t)
  '(font-use-system-font t)
  '(fringe-mode 0 nil (fringe))
+ '(lsp-cmake-server-command "~/.local/bin/cmake-language-server")
  '(make-backup-files nil)
  '(markdown-code-lang-modes
    '(("ocaml" . tuareg-mode) ("elisp" . emacs-lisp-mode) ("ditaa" . artist-mode)
