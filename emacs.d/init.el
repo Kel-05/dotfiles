@@ -116,6 +116,12 @@
 (with-eval-after-load 'lsp-mode
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   (require 'dap-cpptools))
+
+(setq treesit-language-source-alist
+      '((c3 "https://github.com/c3lang/tree-sitter-c3")))
+
+(add-to-list 'load-path "~/.emacs.d/c3-ts-mode")
+(require 'c3-ts-mode)
 ;;
 
 
