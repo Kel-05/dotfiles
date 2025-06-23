@@ -6,7 +6,7 @@ icon=~/.config/hypr/assets/emacs
 error=~/.config/hypr/assets/error
     
 notify-send -i $icon -a Emacs "Emacs" "Starting Emacs daemon..."
-emacs --daemon
+fish -c "nvm use latest && emacs --daemon"
 
 if [ $? -eq 0 ]; then
 	notify-send -i $icon -a Emacs "Emacs" "Emacs daemon started successfully!"

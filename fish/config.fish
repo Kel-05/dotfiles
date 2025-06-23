@@ -7,4 +7,5 @@ if status is-interactive
     set -Ux DOTNET_ROOT $HOME/.dotnet
     fish_add_path $DOTNET_ROOT
     fish_add_path $DOTNET_ROOT/tools
+    nvm use latest &> /dev/null
 end
