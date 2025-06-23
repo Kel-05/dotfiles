@@ -246,3 +246,14 @@
 (global-set-key (kbd "M-<down>") 'duplicate-down)
   ;;
 ;;
+
+;; Hide non-file buffers when cycling with C-x <arrow>
+(defun my/set-buffer-predicate (frame)
+  (when (display-graphic-p frame)
+    (set-frame-parameter frame 'buffer-predicate #'buffer-file-name)))
+
+;; Apply to future frames
+(add-hook 'after-make-frame-functions #'my/set-buffer-predicate)
+
+;; Apply to the current frame (when Emacs starts)
+(my/set-buffer-predicate (selected-frame))
