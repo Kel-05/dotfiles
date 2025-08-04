@@ -28,6 +28,9 @@
 (use-package lsp-ui)
 (use-package cmake-mode)
 
+(use-package lua-mode)
+(use-package love-minor-mode)
+
 (use-package lsp-mode)
 (use-package magit)
 (use-package helm-xref)
@@ -38,7 +41,6 @@
 (use-package catppuccin-theme)
 (use-package yasnippet-snippets)
 
-(use-package lsp-java)
 (use-package typescript-mode)
 (use-package yaml-mode)
 (use-package json-mode)
@@ -69,8 +71,9 @@
 (use-package copilot
   :straight
   (:host github :repo "copilot-emacs/copilot.el" :files ("*.el"))
-  :config
-  (add-hook 'prog-mode-hook 'copilot-mode))
+  ;; :config
+  ;; (add-hook 'prog-mode-hook 'copilot-mode)
+  )
 (use-package copilot-chat)
 
 (use-package dap-mode
