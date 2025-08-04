@@ -2,8 +2,8 @@
 if pidof emacs; then
   	exit 1
 fi
-icon=~/.config/hypr/assets/emacs
-error=~/.config/hypr/assets/error
+icon=emacs
+error=script-error
     
 notify-send -i $icon -a Emacs "Emacs" "Starting Emacs daemon..."
 fish -c "nvm use latest && emacs --daemon"

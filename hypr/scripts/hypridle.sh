@@ -1,6 +1,6 @@
 #!/bin/bash
 time=3000
-icon=~/.config/hypr/assets/info
+icon=info
 
 if pidof hypridle > /dev/null; then
     pkill hypridle

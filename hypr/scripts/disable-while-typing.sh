@@ -1,6 +1,6 @@
 #!/bin/bash
 time=3000
-icon=~/.config/hypr/assets/info
+icon=info
 
 if hyprctl getoption input:touchpad:disable_while_typing | grep 1; then
     hyprctl keyword input:touchpad:disable_while_typing false
