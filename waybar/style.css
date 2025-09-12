@@ -1,7 +1,7 @@
 @import "colorscheme.css";
 * {
     font-family: "Noto Sans, FontAwesome, Symbols Nerd Font";
-    font-size: 14px;
+    font-size: 12pt;
 }
 
 window#waybar {
