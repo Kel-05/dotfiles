@@ -1,4 +1,4 @@
 [Icon Theme]
 Name=Default
 Comment=Default Cursor Theme
-Inherits=catppuccin-frappe-blue-cursors
+Inherits=breeze_cursors
